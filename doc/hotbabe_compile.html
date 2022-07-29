@@ -1,0 +1,284 @@
+<HTML>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<HEAD>
+<TITLE>Compiling Hotbabe Chess</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff" TEXT="#000000" LINK="#0000ff" VLINK="#2f4f4f">
+<P>
+<!-- ------------------------------ HEADER -->
+
+<CENTER><H1>Compiling Hotbabe Chess</H1></CENTER>
+
+Here's the <B>ACE.ACE</B> file for Hotbabe Chess:
+
+<PRE>
+system
+	"hotbabe_chess"
+
+root
+	hotbabe_chess: make
+
+default
+	precompiled ("D:\Eiffel53\precomp\spec\windows\wel")
+	assertion (check)
+	assertion (require)
+	assertion (ensure)
+	assertion (loop)
+	assertion (invariant)
+	disabled_debug (yes)
+	disabled_debug ("dlg_dispatcher")
+	disabled_debug ("wel")
+	disabled_debug ("wel_gdi_count")
+	disabled_debug ("wel_gdi_references")
+	disabled_debug ("win_dispatcher")
+	debug (no)
+	line_generation (no)
+	trace (no)
+	check_vape (yes)
+	console_application (no)
+	array_optimization (yes)
+	dead_code_removal (yes)
+	exception_trace (no)
+	inlining (yes)
+	inlining_size ("24")
+
+
+--precompiled ("$EIFFEL4\precomp\spec\$PLATFORM\base")
+--dynamic_runtime(no) 
+-- assertion (no)
+-- chess application clusters
+-- profile (yes)
+-- WEL
+-- EiffelBase
+-- WEX
+
+cluster
+	root_cluster: "."
+
+	chess_gui_cluster: ".\chess_gui"
+
+	chess_engine_cluster: ".\chess_engine"
+
+	scc_cluster:	".\scc"
+
+	all wel: "$ISE_EIFFEL\library\wel"
+
+	all base: "$ISE_EIFFEL\library\base"
+		exclude
+			"table_eiffel3"; "desc"; 
+		end
+
+	wex_mci_devices: "$ISE_EIFFEL\free_add_ons\wex\library\wex\Mci_devices"
+
+	wex_mci_consts: "$ISE_EIFFEL\free_add_ons\wex\library\wex\Mci_constants"
+
+	wex_mci_support: "$ISE_EIFFEL\free_add_ons\wex\library\wex\Mci_support"
+
+	wex_mci_structs: "$ISE_EIFFEL\free_add_ons\wex\library\wex\Mci_structures"
+
+	hotbabe:	".\hotbabe"
+
+external
+
+	include_path:
+	"$(ISE_EIFFEL)\library\wel\spec\windows\include",
+	"$(ISE_EIFFEL)\free_add_ons\wex\library\wex\spec\windows\include"
+
+	object:
+	"$(ISE_EIFFEL)\library\wel\spec\$(ISE_C_COMPILER)\lib\wel.lib",
+	<B>"$(wex_vc_lib)\winmm.lib"</B>
+
+end
+</PRE>
+
+<H1>Instructions</H1>
+<OL>
+<LI> If the class CHESS_APP_CONSTANTS (File: <B>chess_app_con.e</B>) does not
+exist, then run the <B>h2e</B> utility. Use the parameters:
+<PRE>
+	Header/Resource file:	<B>resource.h</B>
+	Eiffel file:		<B>chess_app_con.e</B>
+	Class name:		CHESS_APP_CONSTANTS
+</PRE>
+
+<LI> Run Eiffel Studio 5.3
+<LI> Browse for the ace specification file: <B>"ace.ace"</B>
+<LI> Compile the application
+<LI> Will produce an executable called hotbabe_chess.exe
+</OL>
+
+<P>
+We assume that 'wel' and 'base' have been precompiled, but you can change this by
+turning off <B>precompiled</B>
+<P>
+We assume the environment variable <B>$(WEX_VC_LIB)</B> is set to point to the
+directory where <B>winmm.lib</B> is. (See WEX Compilation instructions).
+<P>
+We assume that WEX is installed in the following directory:
+<PRE>
+	$(ISE_EIFFEL)\free_add_ons\wex
+</PRE>
+
+<H1>Compiler Warnings</H1>
+<P>
+Don't freak out if you see the following warnings when you compile
+this application. WEX appears to use some soon-to-be obsolete string
+features.
+<P>
+Also the arguments to get_cell_text have been swapped, and this
+will generate a compiler warning.
+<P>
+<PRE>
+-------------------------------------------------------------------------------
+
+Warning code: Obsolete call
+Warning: call uses obsolete feature.
+What to do: update to new feature at your earliest convenience. The
+  feature is still available but may be removed in the future.
+
+Class: WEX_MCI_DEVICE
+Feature: last_error
+Obsolete feature: head (n: INTEGER) (class STRING)
+Obsolete message: ELKS 2001: use `keep_head' instead'
+
+-------------------------------------------------------------------------------
+
+Warning code: Obsolete call
+Warning: call uses obsolete feature.
+What to do: update to new feature at your earliest convenience. The
+  feature is still available but may be removed in the future.
+
+Class: WEX_MCI_DEVICE
+Feature: invariant
+Obsolete feature: empty: BOOLEAN (class STRING)
+Obsolete message: ELKS 2000: Use `is_empty' instead
+
+-------------------------------------------------------------------------------
+
+Warning code: Obsolete call
+Warning: call uses obsolete feature.
+What to do: update to new feature at your earliest convenience. The
+  feature is still available but may be removed in the future.
+
+Class: WEX_MCI_DIGITAL_VIDEO
+Feature: open
+Obsolete feature: empty: BOOLEAN (class STRING)
+Obsolete message: ELKS 2000: Use `is_empty' instead
+
+-------------------------------------------------------------------------------
+
+Warning code: Obsolete call
+Warning: call uses obsolete feature.
+What to do: update to new feature at your earliest convenience. The
+  feature is still available but may be removed in the future.
+
+Class: CHESS_GUI_HISTORY
+Feature: mark
+Obsolete feature: get_cell_text (isub_item, iitem: INTEGER): STRING (class CHESS_GUI_HISTORY)
+Obsolete message: Argument positions have been swapped.
+
+-------------------------------------------------------------------------------
+
+Warning code: Obsolete call
+Warning: call uses obsolete feature.
+What to do: update to new feature at your earliest convenience. The
+  feature is still available but may be removed in the future.
+
+Class: CHESS_GUI_HISTORY
+Feature: mark
+Obsolete feature: get_cell_text (isub_item, iitem: INTEGER): STRING (class CHESS_GUI_HISTORY)
+Obsolete message: Argument positions have been swapped.
+
+-------------------------------------------------------------------------------
+
+Warning code: Obsolete call
+Warning: call uses obsolete feature.
+What to do: update to new feature at your earliest convenience. The
+  feature is still available but may be removed in the future.
+
+Class: WEX_MCI_OPEN_PARMS
+Feature: set_device_type
+Obsolete feature: empty: BOOLEAN (class STRING)
+Obsolete message: ELKS 2000: Use `is_empty' instead
+
+-------------------------------------------------------------------------------
+
+Warning code: Obsolete call
+Warning: call uses obsolete feature.
+What to do: update to new feature at your earliest convenience. The
+  feature is still available but may be removed in the future.
+
+Class: WEX_MCI_OPEN_PARMS
+Feature: set_element_name
+Obsolete feature: empty: BOOLEAN (class STRING)
+Obsolete message: ELKS 2000: Use `is_empty' instead
+
+-------------------------------------------------------------------------------
+
+Warning code: Obsolete call
+Warning: call uses obsolete feature.
+What to do: update to new feature at your earliest convenience. The
+  feature is still available but may be removed in the future.
+
+Class: WEX_MCI_OPEN_PARMS
+Feature: set_alias
+Obsolete feature: empty: BOOLEAN (class STRING)
+Obsolete message: ELKS 2000: Use `is_empty' instead
+
+-------------------------------------------------------------------------------
+
+Warning code: Obsolete call
+Warning: call uses obsolete feature.
+What to do: update to new feature at your earliest convenience. The
+  feature is still available but may be removed in the future.
+
+Class: WEX_MCI_OPEN_PARMS
+Feature: make
+Obsolete feature: empty: BOOLEAN (class STRING)
+Obsolete message: ELKS 2000: Use `is_empty' instead
+
+-------------------------------------------------------------------------------
+
+Warning code: Obsolete call
+Warning: call uses obsolete feature.
+What to do: update to new feature at your earliest convenience. The
+  feature is still available but may be removed in the future.
+
+Class: WEX_MCI_DGV_OPEN_PARMS
+Feature: make
+Obsolete feature: empty: BOOLEAN (class STRING)
+Obsolete message: ELKS 2000: Use `is_empty' instead
+
+-------------------------------------------------------------------------------
+System had to be frozen to include new externals and/or new agents.
+Eiffel system recompiled
+Background C compilation launched.
+</PRE>
+
+
+<!-- ------------------------------ TRAILER -->
+<CENTER><TABLE>
+<TR>
+<TD ALIGN="LEFT"><A HREF="wex_compile.html">Previous</A></TD>
+<TD ALIGN="CENTER"></TD>
+<TD ALIGN="RIGHT"><A HREF="cluster_overview.html">Next</A></TD>
+
+<TR>
+<TD ALIGN="LEFT">Compiling WEX</TD>
+<TD ALIGN="CENTER"></TD>
+<TD ALIGN="RIGHT"><I>Cluster Overview</I></TD>
+
+<TR>
+<TD>  </TD>
+<TD>  </TD>
+<TD>  </TD>
+
+<TR>
+<TD></TD>
+<TD VALIGN=BOTTOM>Hotbabe Chess (C) 2003</TD>
+<TD></TD>
+</TABLE></CENTER>
+</BODY>
+</HTML>

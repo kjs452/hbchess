@@ -1,0 +1,75 @@
+system
+	"hotbabe_chess"
+
+root
+	hotbabe_chess: make
+
+default
+	assertion (check)
+	assertion (require)
+	assertion (ensure)
+	assertion (loop)
+	assertion (invariant)
+	disabled_debug (yes)
+	debug (no)
+	line_generation (no)
+	trace (no)
+	check_vape (yes)
+	console_application (no)
+	address_expression (no)
+	array_optimization (yes)
+	dead_code_removal (yes)
+	dynamic_runtime (no)
+	exception_trace (no)
+	inlining (yes)
+	inlining_size ("36")
+	multithreaded (no)
+
+
+--precompiled ("$EIFFEL4\precomp\spec\$PLATFORM\base")
+--dynamic_runtime(no) 
+-- assertion (no)
+-- chess application clusters
+-- profile (yes)
+-- WEL
+-- EiffelBase
+-- WEX
+
+cluster
+	root_cluster:		"."
+
+
+	chess_gui_cluster:		".\chess_gui"
+
+	chess_engine_cluster:		".\chess_engine"
+
+	scc_cluster:		".\scc"
+
+	all wel:		"$ISE_EIFFEL\library\wel"
+
+	all base:		"$ISE_EIFFEL\library\base"
+		exclude
+			"table_eiffel3"; "desc"; 
+		end
+
+	wex_mci_devices:		"$ISE_EIFFEL\free_add_ons\wex\library\wex\Mci_devices"
+
+	wex_mci_consts:		"$ISE_EIFFEL\free_add_ons\wex\library\wex\Mci_constants"
+
+	wex_mci_support:		"$ISE_EIFFEL\free_add_ons\wex\library\wex\Mci_support"
+
+	wex_mci_structs:		"$ISE_EIFFEL\free_add_ons\wex\library\wex\Mci_structures"
+
+	hotbabe:		".\hotbabe"
+
+external
+
+	include_path:
+		"$(ISE_EIFFEL)\library\wel\spec\windows\include",
+		"$(ISE_EIFFEL)\free_add_ons\wex\library\wex\spec\windows\include"
+
+	object:
+		"$(ISE_EIFFEL)\library\wel\spec\$(ISE_C_COMPILER)\lib\wel.lib",
+		"$(wex_vc_lib)\winmm.lib"
+
+end

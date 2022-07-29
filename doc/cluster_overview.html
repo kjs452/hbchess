@@ -1,0 +1,117 @@
+<HTML>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<HEAD>
+<TITLE>Cluster Overview</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff" TEXT="#000000" LINK="#0000ff" VLINK="#2f4f4f">
+<P>
+<!-- ------------------------------ HEADER -->
+
+<CENTER><H1>Cluster Overview</H1></CENTER>
+
+<CENTER><IMG SRC="clusters.jpg"></CENTER>
+
+<P>
+There are four clusters that comprise Hotbabe Chess. The root class
+for this project is <B>CHESS_APPLICATION_MANAGER</B>. This is where all the
+windows events are handled and where all the top level logic for this game happens.
+<P>
+<H1>Root Cluster</H1>
+The root cluster is mainly concerned with managing the user interface
+and all the logic associated with handling the user interactions.
+<UL>
+<LI> The root cluster has utility classes for saving/load chess games.
+(CHESS_GAME_FILE)
+
+<LI> The root cluster has 2 modal dialogs: New game dialog (NEW_GAME_DIALOG)
+and Change Nickname Dialog (NICKNAME_DIALOG).
+
+<LI> The root cluster has a utility class for converting hotbabe text messages
+into a format that can be displayed in the chat output window (CHAT_TEXT_UTILITIES)
+
+<LI> CHESS_APPLICATION_MANAGER is where the top-level game interaction is managed.
+
+<LI> CHESS_MAIN_WINDOW is the actual WEL window that contains all the graphical
+control.
+</UL>
+<P>
+
+
+<H1>Chess Engine Cluster</H1>
+The <B>Chess Engine</B> is a collection of classes for playing computer chess. The
+primary class is CHESS_SEARCH, this answers the question "What move should I make?"
+<P>
+The class CHESS_GAME is a utility class that hold a current chess game, and all
+the previous moves are stored in a CHESS_GAME_HISTORY.
+<P>
+A very important part of computer chess is producing valid chess moves (CHESS_MOVE)
+quickly. This is accomplished by CHESS_BOARD_TABLES.
+<P>
+A chess position (class CHESS_POSITION), is a efficient representation of
+a chess board and all the pieces, and any additional state information (CHESS_STATE).
+<P>
+
+<H1>Chess GUI Cluster</H1>
+Several custom controls have been created for this application. All these
+controls inherit from CHESS_GUI_CONTROL.
+<P>
+<UL>
+<LI> <B>CHESS_GUI_CONTROL</B>: Parent class for all controls
+
+<LI> <B>CHESS_GUI_BOARD</B>: This is the chess board.
+
+<LI> <B>CHESS_GUI_CHAT_MENU</B>: This is the chess command menu.
+
+<LI> <B>CHESS_GUI_CHAT_OUTPUT</B>: This is the chat output window.
+
+<LI> <B>CHESS_GUI_HISTORY</B>: This is the list of chess moves.
+
+<LI> <B>CHESS_GUI_HISTORY_SCROLL</B>: This is a scroll bar for scrolling thru the
+history moves.
+
+<LI> <B>CHESS_GUI_IMAGE_BUTTON</B>: This is an image button.
+
+<LI> <B>CHESS_GUI_STATIC</B>: This is a fancy static text control.
+
+<LI> <B>CHESS_GUI_VIDEO</B>: This is webcam control for playing video clips.
+
+<LI> <B>CHESS_GUI_VIDEO_DEVICE</B>: This is a WEX_DIGITAL_VIDEO_DEVICE.
+
+<LI> <B>CHESS_GUI_WINDOW</B>: This is the main window parent class.
+</UL>
+
+
+<H1>Hotbabe Cluster</H1>
+<P>
+This cluster controls the hotbabe behavior. It manages a database of all the
+hotbabe text messages and video clips (HOTBABE_DB). Hotbabe is event driven, and
+every event HOTBABE responds to is a HOTBABE_EVENT. Our root cluster interfaces
+with the HOTBABE class only.
+<P>
+
+<!-- ------------------------------ TRAILER -->
+<CENTER><TABLE>
+<TR>
+<TD ALIGN="LEFT"><A HREF="hotbabe_compile.html">Previous</A></TD>
+<TD ALIGN="CENTER"></TD>
+<TD ALIGN="RIGHT"><A HREF="root.html">Next</A></TD>
+
+<TR>
+<TD ALIGN="LEFT">Compiling Hotbabe Chess</TD>
+<TD ALIGN="CENTER"></TD>
+<TD ALIGN="RIGHT"><I>Root Cluster</I></TD>
+
+<TR>
+<TD>  </TD>
+<TD>  </TD>
+<TD>  </TD>
+
+<TR>
+<TD></TD>
+<TD VALIGN=BOTTOM>Hotbabe Chess (C) 2003</TD>
+<TD></TD>
+</TABLE></CENTER>
+</BODY>
+</HTML>

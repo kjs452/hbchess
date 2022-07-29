@@ -1,0 +1,244 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BOARD               BITMAP  DISCARDABLE     "board.bmp"
+IDB_BOARD_REVERSED      BITMAP  DISCARDABLE     "board_reversed.bmp"
+IDB_WEMPTY              BITMAP  DISCARDABLE     "wempty.bmp"
+IDB_BEMPTY              BITMAP  DISCARDABLE     "bempty.bmp"
+IDB_BORDER              BITMAP  DISCARDABLE     "border.bmp"
+IDB_CAPTURE             BITMAP  DISCARDABLE     "capture.bmp"
+IDB_WBISHOP             BITMAP  DISCARDABLE     "wbishop.bmp"
+IDB_BBISHOP             BITMAP  DISCARDABLE     "bbishop.bmp"
+IDB_BKNIGHT             BITMAP  DISCARDABLE     "bknight.bmp"
+IDB_WKNIGHT             BITMAP  DISCARDABLE     "wknight.bmp"
+IDB_WPAWN               BITMAP  DISCARDABLE     "wpawn.bmp"
+IDB_BPAWN               BITMAP  DISCARDABLE     "bpawn.bmp"
+IDB_BROOK               BITMAP  DISCARDABLE     "brook.bmp"
+IDB_WROOK               BITMAP  DISCARDABLE     "wrook.bmp"
+IDB_WQUEEN              BITMAP  DISCARDABLE     "wqueen.bmp"
+IDB_BQUEEN              BITMAP  DISCARDABLE     "bqueen.bmp"
+IDB_BKING               BITMAP  DISCARDABLE     "bking.bmp"
+IDB_WKING               BITMAP  DISCARDABLE     "wking.bmp"
+IDB_WPAWN_SMALL         BITMAP  DISCARDABLE     "wpawn_sm.bmp"
+IDB_WKNIGHT_SMALL       BITMAP  DISCARDABLE     "wknight_sm.bmp"
+IDB_WBISHOP_SMALL       BITMAP  DISCARDABLE     "wbishop_sm.bmp"
+IDB_WROOK_SMALL         BITMAP  DISCARDABLE     "wrook_sm.bmp"
+IDB_WQUEEN_SMALL        BITMAP  DISCARDABLE     "wqueen_sm.bmp"
+IDB_WKING_SMALL         BITMAP  DISCARDABLE     "wking_sm.bmp"
+IDB_BPAWN_SMALL         BITMAP  DISCARDABLE     "bpawn_sm.bmp"
+IDB_BKNIGHT_SMALL       BITMAP  DISCARDABLE     "bknight_sm.bmp"
+IDB_BBISHOP_SMALL       BITMAP  DISCARDABLE     "bbishop_sm.bmp"
+IDB_BROOK_SMALL         BITMAP  DISCARDABLE     "brook_sm.bmp"
+IDB_BQUEEN_SMALL        BITMAP  DISCARDABLE     "bqueen_sm.bmp"
+IDB_BKING_SMALL         BITMAP  DISCARDABLE     "bking_sm.bmp"
+IDB_VIDEOBG             BITMAP  DISCARDABLE     "videobg.bmp"
+IDB_CAM_ON              BITMAP  DISCARDABLE     "cam_on.bmp"
+IDB_CAM_OFF             BITMAP  DISCARDABLE     "cam_off.bmp"
+IDB_ARROW_ON            BITMAP  DISCARDABLE     "arrow_on.bmp"
+IDB_ARROW_OFF           BITMAP  DISCARDABLE     "arrow_of.bmp"
+IDB_ROTATE_BLACK        BITMAP  DISCARDABLE     "rotate_b.bmp"
+IDB_ROTATE_WHITE        BITMAP  DISCARDABLE     "rotate_w.bmp"
+IDB_MENU                BITMAP  DISCARDABLE     "menu.bmp"
+IDB_SKILL_1             BITMAP  DISCARDABLE     "skill_1.bmp"
+IDB_SKILL_2             BITMAP  DISCARDABLE     "skill_2.bmp"
+IDB_SKILL_3             BITMAP  DISCARDABLE     "skill_3.bmp"
+IDB_SKILL_4             BITMAP  DISCARDABLE     "skill_4.bmp"
+IDB_SKILL_5             BITMAP  DISCARDABLE     "skill_5.bmp"
+IDB_SKILL_6             BITMAP  DISCARDABLE     "skill_6.bmp"
+IDB_SKILL_7             BITMAP  DISCARDABLE     "skill_7.bmp"
+IDB_SKILL_8             BITMAP  DISCARDABLE     "skill_8.bmp"
+IDB_SKILL_9             BITMAP  DISCARDABLE     "skill_9.bmp"
+IDB_SKILL_10            BITMAP  DISCARDABLE     "skill_10.bmp"
+IDB_SKILL_11            BITMAP  DISCARDABLE     "skill_11.bmp"
+IDB_SKILL_12            BITMAP  DISCARDABLE     "skill_12.bmp"
+IDB_SKILL_13            BITMAP  DISCARDABLE     "skill_13.bmp"
+IDB_SKILL_14            BITMAP  DISCARDABLE     "skill_14.bmp"
+IDB_SKILL_15            BITMAP  DISCARDABLE     "skill_15.bmp"
+IDB_SKILL_16            BITMAP  DISCARDABLE     "skill_16.bmp"
+IDB_SKILL_17            BITMAP  DISCARDABLE     "skill_17.bmp"
+IDB_SKILL_18            BITMAP  DISCARDABLE     "skill_18.bmp"
+IDB_SKILL_19            BITMAP  DISCARDABLE     "skill_19.bmp"
+IDB_SKILL_20            BITMAP  DISCARDABLE     "skill_20.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON1               ICON    DISCARDABLE     "icon1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+DLG_NEW_GAME DIALOG DISCARDABLE  0, 0, 195, 170
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "New Game"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,95,149,40,14
+    PUSHBUTTON      "Cancel",IDCANCEL,148,149,40,14
+    GROUPBOX        "Difficulty",IDC_STATIC,7,47,181,91,BS_CENTER
+    LTEXT           "Choose your side to play?",IDC_STATIC,7,7,82,8
+    CONTROL         "Slider1",NGP_SKILL_SLIDER,"msctls_trackbar32",
+                    TBS_AUTOTICKS | WS_TABSTOP,28,57,139,22
+    LTEXT           "Level: 129",NGP_LEVEL_TXT,17,86,34,8
+    RTEXT           "Difficulty: Easy",NGP_DIFFICULTY_TXT,93,86,87,8
+    LTEXT           "Fixed 2-ply search",NGP_PLY_TXT,17,98,85,8
+    LTEXT           "Search Time: 10 seconds",NGP_SEARCH_TIME_TXT,17,110,91,
+                    8
+    LTEXT           "Queiscent search: Enabled",NGP_QSEARCH_TXT,17,122,89,8
+    LTEXT           "easy",IDC_STATIC,13,60,16,8
+    LTEXT           "hard",IDC_STATIC,167,60,15,8
+    CONTROL         "White Pieces",NGP_WHITE_RADIO,"Button",
+                    BS_AUTORADIOBUTTON,97,7,58,10
+    CONTROL         "Black Pieces",NGP_BLACK_RADIO,"Button",
+                    BS_AUTORADIOBUTTON,97,18,57,10
+END
+
+DLG_CHANGE_NICKNAME DIALOG DISCARDABLE  0, 0, 197, 47
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Change Nickname"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Done",IDOK,152,15,38,14
+    LTEXT           "New Nickname:",IDC_STATIC,7,18,52,8
+    EDITTEXT        CNN_NICKNAME_EDIT,63,16,70,12,ES_AUTOHSCROLL
+END
+
+DLG_DEBUG DIALOG DISCARDABLE  0, 0, 280, 206
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Debug Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,91,184,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,149,184,50,14
+    LISTBOX         DBG_QUEUE_LST,171,21,102,154,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         DBG_ALL_LST,7,21,102,152,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Add >>",DBG_ADD_BUT,118,28,41,15
+    PUSHBUTTON      "<< Remove",DBG_REMOVE_BUT,118,49,41,15
+    LTEXT           "Available Events",IDC_STATIC,23,7,54,8
+    LTEXT           "Debug Events",IDC_STATIC,199,7,46,8
+    PUSHBUTTON      "Up",DBG_UP_BUT,128,102,24,16
+    PUSHBUTTON      "Down",DBG_DOWN_BUT,128,121,24,16
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    DLG_NEW_GAME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 188
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 163
+    END
+
+    DLG_CHANGE_NICKNAME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 190
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 40
+    END
+
+    DLG_DEBUG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 273
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 204
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    STR_TT_ROTATE           "Flip chess board"
+    STR_TT_VIDEO_SWITCH     "Webcam on/off"
+    STR_TT_CHAT_ICON        "Chess command menu"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,148 @@
+<HTML>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<HEAD>
+<TITLE>Compiling WEX</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff" TEXT="#000000" LINK="#0000ff" VLINK="#2f4f4f">
+<P>
+<!-- ------------------------------ HEADER -->
+
+<CENTER><H1>Compiling WEX</H1></CENTER>
+
+The WEX package is provided in the <B>free_add_ons</B> directory of the
+Eiffel Studio 5.3 distribution.
+
+<P>
+The <B>ACE.ACE</B> file uses the environment variable "WEX_VC_LIB".
+<P>
+<PRE>
+system
+	"hotbabe_chess"
+
+root
+	hotbabe_chess: make
+
+default
+	precompiled ("D:\Eiffel53\precomp\spec\windows\wel")
+	assertion (check)
+	assertion (require)
+	assertion (ensure)
+	assertion (loop)
+	assertion (invariant)
+	disabled_debug (yes)
+	disabled_debug ("dlg_dispatcher")
+	disabled_debug ("wel")
+	disabled_debug ("wel_gdi_count")
+	disabled_debug ("wel_gdi_references")
+	disabled_debug ("win_dispatcher")
+	debug (no)
+	line_generation (no)
+	trace (no)
+	check_vape (yes)
+	console_application (no)
+	array_optimization (yes)
+	dead_code_removal (yes)
+	exception_trace (no)
+	inlining (yes)
+	inlining_size ("24")
+
+
+--precompiled ("$EIFFEL4\precomp\spec\$PLATFORM\base")
+--dynamic_runtime(no) 
+-- assertion (no)
+-- chess application clusters
+-- profile (yes)
+-- WEL
+-- EiffelBase
+-- WEX
+
+cluster
+	root_cluster: "."
+
+	chess_gui_cluster: ".\chess_gui"
+
+	chess_engine_cluster: ".\chess_engine"
+
+	scc_cluster:	".\scc"
+
+	all wel: "$ISE_EIFFEL\library\wel"
+
+	all base: "$ISE_EIFFEL\library\base"
+		exclude
+			"table_eiffel3"; "desc"; 
+		end
+
+	wex_mci_devices: "$ISE_EIFFEL\free_add_ons\wex\library\wex\Mci_devices"
+
+	wex_mci_consts: "$ISE_EIFFEL\free_add_ons\wex\library\wex\Mci_constants"
+
+	wex_mci_support: "$ISE_EIFFEL\free_add_ons\wex\library\wex\Mci_support"
+
+	wex_mci_structs: "$ISE_EIFFEL\free_add_ons\wex\library\wex\Mci_structures"
+
+	hotbabe:	".\hotbabe"
+
+external
+
+	include_path:
+	"$(ISE_EIFFEL)\library\wel\spec\windows\include",
+	"$(ISE_EIFFEL)\free_add_ons\wex\library\wex\spec\windows\include"
+
+	object:
+	"$(ISE_EIFFEL)\library\wel\spec\$(ISE_C_COMPILER)\lib\wel.lib",
+	<B>"$(wex_vc_lib)\winmm.lib"</B>
+
+end
+</PRE>
+
+<P>
+You can set this environment variable from windows: <B>Start -> Control Panel -> System
+-> Environment Variables</B>
+<P>
+Or you can change the project settings for Hotbabe Chess, and just hard code
+the path to the <B>winmm.lib</B> file.
+<P>
+On my computer, I use this setting for <B>$(WEX_VC_LIB)</B>:
+<PRE>
+	WEX_VC_LIB=C:\Program Files\Microsoft Visual Studio\VC98\lib
+</PRE>
+<P>
+WEX has a C library that needs to be compiled before it can be
+used in Hotbabe Chess. It appears that in the Eiffel 5.3 distribution,
+that this library already compiled for you.
+<P>
+Hoever, if it doesn't exist, this is the library that must be compiled:
+<PRE>
+	Eiffel53\free_add_ons\wex\library\clib\cwex.lib
+</PRE>
+<P>
+Running <B>make_msc.bat</B> should create this library for you.
+<P>
+
+
+<!-- ------------------------------ TRAILER -->
+<CENTER><TABLE>
+<TR>
+<TD ALIGN="LEFT"><A HREF="index.html">Previous</A></TD>
+<TD ALIGN="CENTER"></TD>
+<TD ALIGN="RIGHT"><A HREF="hotbabe_compile.html">Next</A></TD>
+
+<TR>
+<TD ALIGN="LEFT">Table of Contents</TD>
+<TD ALIGN="CENTER"></TD>
+<TD ALIGN="RIGHT"><I>Compiling Hotbabe Chess</I></TD>
+
+<TR>
+<TD>  </TD>
+<TD>  </TD>
+<TD>  </TD>
+
+<TR>
+<TD></TD>
+<TD VALIGN=BOTTOM>Hotbabe Chess (C) 2003</TD>
+<TD></TD>
+</TABLE></CENTER>
+</BODY>
+</HTML>

@@ -1,0 +1,110 @@
+<HTML>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<HEAD>
+<TITLE>Chess Engine Cluster</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff" TEXT="#000000" LINK="#0000ff" VLINK="#2f4f4f">
+<P>
+<!-- ------------------------------ HEADER -->
+
+<CENTER><H1>Chess Engine Cluster</H1></CENTER>
+
+<H1>CHESS MOVE TABLE</H1>
+<P>
+The diagram below shows the CHESS_MOVE_TABLE. This data structure allows
+us to produce all vaid moves. We index a large 2-D array with a piece
+types, and a chess square. This gives us a list of "paths" in which
+the chess piece may move. In this example we are looking at the
+data structure for the <B>White Bishop</B> located on square <B>C1</B>
+
+<P>
+<CENTER><IMG SRC="move_table.jpg"></CENTER>
+<P>
+
+<P>
+One of the key tasks of computerized chess is producing all the valid
+moves at each ply in the search tree. The diagram above shows
+the data structure for CHESS_MOVE_TABLE.
+<P>
+Pretend we have a <B>White Bishop</B> on square C1.
+<OL>
+<LI> Index the MOVE_TABLE with (White Bishop, C1)
+
+<LI> Obtain the CHESS_MOVE_SQUARE from this index position in the 2-d ARRAY.
+
+<LI> Iterate over all the CHESS_PATH's in the CHESS_PATH_LIST.
+
+<LI> For a bishop on square C1 there are 2 paths. One going north-west and one
+going north east.
+
+<LI> We examine the list of squares along this path. This is all the valid moves
+the bishop can make on square C1.
+
+<LI> If we encounter a white piece, we are blocked and cannot move any further.
+
+<LI> If we encounter a black piece, we have a CAPTURE move!!!! Which is
+a very important move that we might want to look at.
+
+</OL>
+
+
+<H1>CHESS ATTACK TABLE</H1>
+<P>
+Another very important operation is knowing if the King is under attack (or in check).
+This task is accomplished by using the CHESS_ATTACK_TABLE. In this example,
+assume the <B>White King</B> is located on square <B>C1</B>.
+
+
+<P>
+<CENTER><IMG SRC="attack_table.jpg"></CENTER>
+<P>
+
+<P>
+There are 6 CHESS_PATHS's that lead <B>to</B> this square. The Knight jumps
+are shown in yellow. The straight paths are shown in blue. And the diagonal
+paths are shown in dark red.
+<P>
+In order to figure out if the White King, located on square C1 is
+in danger, we do the following:
+<P>
+<OL>
+<LI> Index the ATTACK table with the index <B>(Chess_color_white, C1)</B>.
+
+<LI> Iterate over all the CHESS_PATH's in the CHESS_PATH_LIST
+
+<LI> Follow all the squares in the CHESS_PATH. If we find a piece
+of OUR color, we are safe.
+
+<LI> If we find an a enemy piece along a path, we are possibly in danger, and
+must check to see what type of piece is on that square.
+
+</UL>
+
+
+
+<!-- ------------------------------ TRAILER -->
+<CENTER><TABLE>
+<TR>
+<TD ALIGN="LEFT"><A HREF="root.html">Previous</A></TD>
+<TD ALIGN="CENTER"></TD>
+<TD ALIGN="RIGHT"><A HREF="chess_gui.html">Next</A></TD>
+
+<TR>
+<TD ALIGN="LEFT">Root Cluster</TD>
+<TD ALIGN="CENTER"></TD>
+<TD ALIGN="RIGHT"><I>Chess GUI Cluster</I></TD>
+
+<TR>
+<TD>  </TD>
+<TD>  </TD>
+<TD>  </TD>
+
+<TR>
+<TD></TD>
+<TD VALIGN=BOTTOM>Hotbabe Chess (C) 2003</TD>
+<TD></TD>
+</TABLE></CENTER>
+</BODY>
+</HTML>

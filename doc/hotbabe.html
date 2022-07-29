@@ -1,0 +1,62 @@
+<HTML>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<HEAD>
+<TITLE>Hotbabe Cluster</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff" TEXT="#000000" LINK="#0000ff" VLINK="#2f4f4f">
+<P>
+<!-- ------------------------------ HEADER -->
+
+<CENTER><H1>Hotbabe Cluster</H1></CENTER>
+
+<P>
+<CENTER><IMG SRC="hotbabe_cluster.jpg"></CENTER>
+
+<P>
+Hotbabe consists of 2 primary classes. The HOTBABE_DB class and the HOTBABE class.
+HOTBABE_DB will read the <B>hotbabe_chess.dat</B> file and build an internal
+database (as a hash table). This hash table allows us to quickly look up a 
+<I>group name</I> and find text messages and video clips.
+
+<P>
+Groups and be nested into sub-groups and sub-sub-groups, etc... This structure
+allows us to traverse a tree of groups to locate a video clip or text message. At
+each level we choose a random clip (or text message).
+
+<P>
+<B>HOTBABE</B> is a queue of HOTBABE_EVENT's. Whenever something happens during
+the game we will insert an event into the hotbabe queue. For example, if the user captures
+hotbabe's knight. We will insert the event: HOTBABE_PLAYER_CAPTURES_KNIGHT into
+the queue.
+<P>
+Whenever a video clip finishes playing, we recieve a <B>webcam_event</B> and
+we dequeue the next event, and play whatever video clip is requested. We also
+display any text message associated with that video clip.
+<P>
+
+<!-- ------------------------------ TRAILER -->
+<CENTER><TABLE>
+<TR>
+<TD ALIGN="LEFT"><A HREF="chess_gui.html">Previous</A></TD>
+<TD ALIGN="CENTER"></TD>
+<TD ALIGN="RIGHT"><A HREF="filming.html">Next</A></TD>
+
+<TR>
+<TD ALIGN="LEFT">Chess GUI Cluster</TD>
+<TD ALIGN="CENTER"></TD>
+<TD ALIGN="RIGHT"><I>Making of Hotbabe</I></TD>
+
+<TR>
+<TD>  </TD>
+<TD>  </TD>
+<TD>  </TD>
+
+<TR>
+<TD></TD>
+<TD VALIGN=BOTTOM>Hotbabe Chess (C) 2003</TD>
+<TD></TD>
+</TABLE></CENTER>
+</BODY>
+</HTML>

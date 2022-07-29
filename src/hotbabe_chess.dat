@@ -1,0 +1,4283 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; This file contains all the text/video clip information
+; for the hotbabe AI.
+;
+; M <magic number>
+;	8-digits, must match internally computed checksum of this file
+;	Does not include the R-record (or this record).
+;
+; R <M | G>
+;	Rating 'M' - mature,  G - General
+;	A 'G' rating, means 't' and 'v' records are not used by hotbabe
+;	(This record may be modified without affecting the magic number)
+;
+; N <nickname>
+;	hotbabe's nickname
+;
+; D <0 | 1>
+;	Debug mode
+;
+; V <start-frame>   <end-frame>
+; V hh:mm:ss.ff		hh:mm:ss.ff
+;	Video clip definition record
+;
+; v <start-frame>   <end-frame>
+; v hh:mm:ss.ff		hh:mm:ss.ff
+;	Video clip definition record (mature rating)
+;
+;	hh - hour	(00-99)
+;	mm - minute	(00-59)
+;	ss - second	(00-59)
+;	ff - frame	(00-29) 
+;
+; T <text-message>
+;	Text message record
+;
+; t <text-message>
+;	Text message record (mature rating)
+;
+; + <text-message>
+;	continue a text message
+;
+; G <group-name>
+;	Allows a group to refers to a subgroup.
+;
+; FILE FORMAT NOTES:
+;	* A comment is any line beginning with ';' (after leading whitespace
+;	had been removed)
+;
+;	* Blank lines are ignored
+;
+;	* A record definition consists of the record letter 'G', 'T', etc..
+;	followed by a single space character.
+;
+;	* To create a text record with a blank line, use the '~' character.
+;
+;	* Group names are case-insensitive
+;
+; STRING FORMATTING:
+;	* BOLD: Bold text can be encoded by surrounding a phrase or word
+;	  with asterisks. Eg.
+;		T What's up? I think you are *cool*
+;
+;	* EMBEDDED LINKS: Embedded links are encoded by surrounding
+;	  a fake URL with angled brackets
+;
+;		T Click <here|HELP> for help.
+;
+;	  The '|' seperates the link text from the underlying identifier that
+;	  allows us to distinquish different links.
+;
+;	* VARIABLES: $ variables are things like $foo, $xxyyzz8860, etc..
+;
+
+; magic number
+M 85319040
+
+; Rating: M=Mature, G=General Audience
+;R G
+R M
+
+; hotbabe's nick name
+N hotbabe
+
+; Debug mode
+D 0
+
+; empty text message
+[SAY_NOTHING]
+T ~
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; clips in organized groups
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[EMPTY_SPECIAL_CLIPS]
+; rat on keyboard
+V 00:00:00.00 00:00:04.27
+; spider up
+V 00:00:04.27 00:00:06.15
+; spider down
+V 00:00:06.15 00:00:07.13
+; rat on monitor
+V 00:00:07.13 00:00:10.16
+; getting sunglasses
+V 00:00:10.16 00:00:15.20
+; getting coffee mug
+V 00:00:15.20 00:00:17.27
+; getting book
+V 00:00:17.27 00:00:24.16
+
+[EMPTY_CLIPS]
+V 00:00:25.16 00:00:29.17
+V 00:00:29.17 00:00:34.16
+V 00:00:34.16 00:00:39.19
+V 00:00:39.19 00:00:41.25
+V 00:00:41.25 00:00:44.07
+V 00:00:44.07 00:00:47.13
+G EMPTY_SPECIAL_CLIPS
+
+[SITDOWN_CLIPS]
+; from L
+V 00:00:48.13 00:00:54.27
+; from L, wave
+V 00:00:54.27 00:00:59.12
+; from R, almost fall
+V 00:00:59.12 00:01:08.16
+; peek from R
+V 00:01:08.16 00:01:14.25
+; from R
+V 00:01:14.25 00:01:19.19
+; from L
+V 00:01:19.19 00:01:28.03
+; from below
+V 00:01:28.03 00:01:35.03
+; from R, behing chair
+V 00:01:35.03 00:01:42.23
+; with jacket
+V 00:01:42.23 00:01:48.08
+
+[STANDUP_CLIPS]
+; to R, fast
+V 00:01:49.08 00:01:52.11
+; to L with bong
+V 00:01:52.11 00:01:55.28
+; wave, to L
+V 00:01:55.28 00:01:59.11
+; check watch, to R
+V 00:01:59.11 00:02:02.12
+; yawn, to R
+V 00:02:02.12 00:02:07.26
+; makeup, to L
+V 00:02:07.26 00:02:15.22
+; fast to R
+V 00:02:15.22 00:02:17.21
+; bye note, to L
+V 00:02:17.21 00:02:25.16
+; bye note, to L
+V 00:02:25.16 00:02:33.18
+
+[CREDITS_CLIPS]
+; Ken 1
+V 00:02:34.18 00:02:53.14
+; Ken 2
+V 00:02:53.14 00:03:11.05
+; Anonymous
+;V 00:03:11.05 00:03:28.07
+
+[MESSAGE_CLIPS]
+; c++ rip in half
+V 00:03:28.07 00:03:41.02
+; c++ crumple
+V 00:03:41.02 00:03:53.03
+; eiffel thanks
+V 00:03:53.03 00:04:13.29
+
+[GENERAL_CLIPS]
+V 00:04:14.29 00:04:19.21
+V 00:04:19.21 00:04:23.27
+V 00:04:23.27 00:04:26.08
+V 00:04:26.08 00:04:29.18
+V 00:04:29.18 00:04:34.13
+V 00:04:34.13 00:04:40.12
+V 00:04:40.12 00:04:44.09
+V 00:04:44.09 00:04:48.04
+V 00:04:48.04 00:04:50.29
+V 00:04:50.29 00:04:52.21
+V 00:04:52.21 00:04:59.08
+V 00:04:59.08 00:05:05.28
+V 00:05:05.28 00:05:08.20
+V 00:05:08.20 00:05:14.23
+V 00:05:14.23 00:05:18.25
+V 00:05:18.25 00:05:25.01
+V 00:05:25.01 00:05:29.10
+V 00:05:29.10 00:05:30.25
+V 00:05:30.25 00:05:34.09
+V 00:05:34.09 00:05:37.19
+V 00:05:37.19 00:05:42.27
+V 00:05:42.27 00:05:46.11
+V 00:05:46.11 00:05:50.11
+V 00:05:50.11 00:05:54.28
+V 00:05:54.28 00:05:59.21
+V 00:05:59.21 00:06:02.26
+V 00:06:02.26 00:06:09.23
+V 00:06:09.23 00:06:17.05
+V 00:06:17.05 00:06:20.27
+V 00:06:20.27 00:06:24.26
+V 00:06:24.26 00:06:27.29
+V 00:06:27.29 00:06:32.21
+V 00:06:32.21 00:06:35.24
+V 00:06:35.24 00:06:39.17
+V 00:06:39.17 00:06:43.13
+
+[COFFEE_CLIPS]
+V 00:06:44.13 00:06:52.01
+V 00:06:52.01 00:06:59.26
+V 00:06:59.26 00:07:10.12
+
+[BEER_CLIPS]
+V 00:07:11.12 00:07:27.08
+V 00:07:27.08 00:07:36.07
+V 00:07:36.07 00:07:43.17
+V 00:07:43.17 00:07:50.20
+V 00:07:50.20 00:07:58.02
+V 00:07:58.02 00:08:09.08
+
+[WHISKEY_CLIPS]
+V 00:08:10.08 00:08:23.06
+V 00:08:23.06 00:08:36.09
+V 00:08:36.09 00:08:46.11
+V 00:08:46.11 00:09:03.17
+
+[WINE_CLIPS]
+V 00:09:04.17 00:09:18.04
+V 00:09:18.04 00:09:24.25
+V 00:09:24.25 00:09:34.08
+V 00:09:34.08 00:09:43.24
+
+[MARTINI_CLIPS]
+V 00:09:43.24 00:09:53.27
+V 00:09:53.27 00:10:03.29
+V 00:10:03.29 00:10:13.21
+
+[PHONE_CLIPS]
+V 00:10:14.21 00:10:41.20
+V 00:10:41.20 00:10:59.11
+V 00:10:59.11 00:11:12.00
+V 00:11:12.00 00:11:25.15
+
+[SOUP_CLIPS]
+V 00:11:26.15 00:11:35.15
+V 00:11:35.15 00:11:48.04
+
+[BOOK_CLIPS]
+V 00:11:49.04 00:11:59.15
+V 00:11:59.15 00:12:13.11
+V 00:12:13.11 00:12:30.28
+
+[CHESS_BOARD_CLIPS]
+; chess board
+V 00:12:31.28 00:12:40.01
+; dump pieces
+V 00:12:50.04 00:13:04.16
+
+[CHESS_PIECE_CLIPS]
+; piece on face
+V 00:12:40.01 00:12:50.04
+
+[SICK_CLIPS]
+; sneeze
+V 00:13:13.22 00:13:21.01
+; sneeze with box
+V 00:13:21.01 00:13:27.07
+; blow nose
+V 00:13:27.07 00:13:33.25
+
+[TISSUE_CLIPS]
+; cry/pout
+V 00:13:05.16 00:13:13.22
+; crying/sad
+V 00:13:33.25 00:13:42.15
+; touchup listick
+V 00:13:42.15 00:13:51.03
+
+[SMOKING_CLIPS]
+V 00:13:52.03 00:14:00.03
+V 00:14:00.03 00:14:10.15
+V 00:14:10.15 00:14:22.18
+V 00:14:22.18 00:14:30.21
+; light up a smoke with lighter
+V 00:14:30.21 00:14:44.17
+
+[HAIR_CLIPS]
+V 00:14:45.17 00:14:53.12
+; twirl finger in hair
+V 00:14:53.12 00:14:59.22
+; brush hair
+V 00:14:59.22 00:15:11.05
+; comb hair
+V 00:15:11.05 00:15:26.24
+
+[MAKEUP_CLIPS]
+; eye liner
+V 00:15:27.24 00:15:43.20
+; lipstick
+V 00:15:43.20 00:15:58.10
+; face powder
+V 00:15:58.10 00:16:08.15
+
+[FINGER_CLIPS]
+; dbl. finger
+V 00:16:09.15 00:16:13.16
+; single finger
+V 00:16:13.16 00:16:16.22
+
+[SCREW_YOU_CLIPS]
+; screw you
+V 00:16:16.22 00:16:19.09
+; screw you
+V 00:16:19.09 00:16:23.17
+
+[THUMBS_UP_CLIPS]
+; dbl thumbs up
+V 00:16:23.17 00:16:26.09
+; single thumbs up
+V 00:16:26.09 00:16:29.04
+
+[THUMBS_DOWN_CLIPS]
+; thumbs down
+V 00:17:08.28 00:17:11.12
+; dbl. thumbs down
+V 00:17:11.12 00:17:14.08
+
+[CLAP_CLIPS]
+; clap
+V 00:16:29.04 00:16:35.05
+
+[WAVE_CLIPS]
+; wave
+V 00:16:35.05 00:16:38.03
+; wave
+V 00:16:38.03 00:16:40.13
+; hip wave
+V 00:16:40.13 00:16:42.25
+; dbl. wave
+V 00:16:42.25 00:16:44.29
+; pagaent wave
+V 00:16:44.29 00:16:49.05
+
+[CRAZY_CLIPS]
+; crazy on L
+V 00:17:14.08 00:17:18.09
+; crazy on R
+V 00:17:18.09 00:17:20.23
+
+[PEACE_CLIPS]
+; peace sign
+V 00:16:52.28 00:16:55.08
+; peace sign
+V 00:16:55.08 00:17:00.24
+
+[GAGGING_CLIPS]
+; gagging
+V 00:17:00.24 00:17:03.00
+
+[FUCK_SIGN_CLIPS]
+; fucking sign
+V 00:16:49.05 00:16:52.28
+
+[CUT_THROAT_CLIPS]
+; cut throat
+V 00:17:03.00 00:17:08.28
+
+[POINT_FINGER_CLIPS]
+; point finger, express gloating
+V 00:17:20.23 00:17:23.20
+
+[BONG_CLIPS]
+V 00:17:24.20 00:17:42.25
+V 00:17:42.25 00:17:58.20
+V 00:17:58.20 00:18:12.28
+V 00:18:12.28 00:18:29.22
+
+[PIPE_CLIPS]
+V 00:18:30.22 00:18:43.03
+V 00:18:43.03 00:18:57.19
+V 00:18:57.19 00:19:11.04
+
+[PALM_PILOT_CLIPS]
+V 00:19:12.04 00:19:30.22
+V 00:19:30.22 00:19:43.13
+
+[DISC_MAN_CLIPS]
+V 00:19:44.13 00:19:55.05
+V 00:19:55.05 00:20:08.27
+
+[APPLE_CLIPS]
+V 00:20:09.27 00:20:17.26
+
+[BANANA_CLIPS]
+V 00:20:18.26 00:20:36.22
+V 00:20:36.22 00:20:53.27
+
+[CANDY_CLIPS]
+V 00:20:54.27 00:21:08.22
+V 00:21:08.22 00:21:19.25
+V 00:21:19.25 00:21:28.18
+
+[AIR_FRESH_CLIPS]
+V 00:21:29.18 00:21:34.28
+; hotbabe farts
+V 00:21:34.28 00:21:41.16
+V 00:21:41.16 00:21:46.24
+
+[PLAY_STATION_CLIPS]
+V 00:21:47.24 00:22:00.19
+V 00:22:00.19 00:22:12.03
+V 00:22:12.03 00:22:24.12
+
+[BILLS_CLIPS]
+V 00:22:25.12 00:22:34.05
+V 00:22:34.05 00:22:43.17
+V 00:22:43.17 00:22:55.05
+
+[SADNESS_CLIPS]
+V 00:22:56.05 00:23:01.00
+V 00:23:01.00 00:23:08.00
+V 00:23:08.00 00:23:13.03
+V 00:23:13.03 00:23:18.27
+V 00:23:18.27 00:23:24.23
+V 00:23:24.23 00:23:31.11
+V 00:23:31.11 00:23:36.17
+V 00:23:36.17 00:23:40.24
+V 00:23:40.24 00:23:44.26
+V 00:23:44.26 00:23:48.25
+V 00:23:48.25 00:23:52.23
+V 00:23:52.23 00:23:58.16
+V 00:23:58.16 00:24:01.12
+V 00:24:01.12 00:24:04.28
+V 00:24:04.28 00:24:09.11
+
+[HAPPY_CLIPS]
+V 00:24:10.11 00:24:14.10
+V 00:24:14.10 00:24:16.19
+V 00:24:16.19 00:24:22.14
+V 00:24:22.14 00:24:26.24
+V 00:24:26.24 00:24:29.19
+V 00:24:29.19 00:24:35.04
+V 00:24:35.04 00:24:38.28
+V 00:24:38.28 00:24:44.21
+V 00:24:44.21 00:24:48.23
+
+[POUT_CLIPS]
+V 00:24:49.23 00:24:54.13
+V 00:24:54.13 00:25:01.01
+V 00:25:01.01 00:25:06.18
+V 00:25:07.18 00:25:13.13
+V 00:25:13.13 00:25:18.17
+	; from group: TISSUES
+	; crying/sad
+	V 00:13:33.25 00:13:42.15
+	; cry/pout
+	V 00:13:05.16 00:13:13.22
+
+[THINKING_CLIPS]
+V 00:25:19.17 00:25:23.11
+V 00:25:23.11 00:25:27.23
+V 00:25:27.23 00:25:33.25
+V 00:25:33.25 00:25:37.21
+V 00:25:37.21 00:25:44.03
+V 00:25:44.03 00:25:50.03
+V 00:25:50.03 00:25:57.28
+V 00:25:57.28 00:26:07.15
+V 00:26:07.15 00:26:13.06
+V 00:26:13.06 00:26:20.27
+V 00:26:20.27 00:26:33.03
+V 00:26:33.03 00:26:41.16
+V 00:26:41.16 00:26:49.03
+V 00:26:49.03 00:26:57.14
+V 00:26:57.14 00:27:04.15
+V 00:27:04.15 00:27:11.23
+
+[BORED_CLIPS]
+; yawn
+V 00:27:12.23 00:27:19.15
+; yawn
+V 00:27:19.15 00:27:24.27
+; whistling, tapping on keyboard
+V 00:27:24.27 00:27:35.29
+V 00:27:35.29 00:27:46.25
+; sleep on keyboard
+V 00:27:46.25 00:28:01.00
+
+[WIN_CLIPS]
+V 00:28:02.00 00:28:06.04
+V 00:28:06.04 00:28:10.17
+V 00:28:10.17 00:28:15.26
+V 00:28:15.26 00:28:20.24
+V 00:28:20.24 00:28:23.05
+V 00:28:23.05 00:28:28.11
+; standup happy dance
+V 00:28:28.11 00:28:36.26
+V 00:28:36.26 00:28:43.22
+; party hat
+V 00:28:43.22 00:28:50.26
+; party hat, balloons
+V 00:28:50.26 00:29:02.15
+
+[LOSE_CLIPS]
+V 00:29:03.15 00:29:08.19
+V 00:29:08.19 00:29:12.14
+V 00:29:12.14 00:29:20.23
+V 00:29:20.23 00:29:29.26
+V 00:29:29.26 00:29:44.09
+V 00:29:44.09 00:29:53.12
+V 00:29:53.12 00:29:58.27
+; give finger in anger
+V 00:29:58.27 00:30:02.00
+; give screw you in anger
+V 00:30:02.00 00:30:06.16
+
+[SHORT_TYPING_CLIPS]
+V 00:30:19.24 00:30:26.23
+; rolling head
+V 00:31:45.18 00:31:50.05
+V 00:31:50.05 00:31:53.05
+V 00:32:26.07 00:32:30.17
+V 00:32:42.03 00:32:48.25
+; 5 sec
+V 00:32:37.10 00:32:42.03
+; adjust shirt 6 sec.
+V 00:32:13.15 00:32:19.04
+; 7 sec
+V 00:32:19.04 00:32:26.07
+V 00:32:30.17 00:32:37.10
+V 00:32:48.25 00:32:55.08
+
+[LONG_TYPING_CLIPS]
+; 8 sec.
+V 00:32:05.25 00:32:13.15
+; 9 sec.
+V 00:30:51.06 00:30:59.24
+; 10 sec.
+V 00:31:24.10 00:31:35.25
+V 00:31:35.25 00:31:45.18
+V 00:32:55.08 00:33:05.13
+; 12 sec.
+V 00:31:12.28 00:31:24.10
+V 00:30:07.16 00:30:19.24
+V 00:30:26.23 00:30:38.07
+V 00:31:53.05 00:32:05.25
+; long 13 sec
+V 00:30:38.07 00:30:51.06
+V 00:30:59.24 00:31:12.28
+
+[AGREE_CLIPS]
+V 00:33:06.13 00:33:09.02
+	; from group POTENTIAL_CLIPS
+	; nod, "ah okay"
+	V 00:35:03.05 00:35:09.17
+	; touch hair, nod agree
+	V 00:35:09.17 00:35:15.02
+	; nod, smile, agree
+	V 00:35:15.02 00:35:20.12
+
+[DISAGREE_CLIPS]
+V 00:33:10.02 00:33:12.21
+V 00:33:16.14 00:33:21.13
+V 00:33:21.13 00:33:25.28
+V 00:33:25.28 00:33:29.07
+; clip unusable... has yellow card in it 
+; (changed to remove card)
+;V 00:33:12.21 00:33:16.14
+V 00:33:12.21 00:33:16.10
+
+[MISC_CLIPS]
+; water
+V 00:33:30.07 00:33:37.11
+; pick nose
+V 00:33:37.11 00:33:45.11
+; pick nose
+V 00:33:45.11 00:33:50.17
+; ice on face
+V 00:33:50.17 00:34:09.12
+; candle 1
+V 00:34:09.12 00:34:20.03
+; candle 2
+V 00:34:20.03 00:34:27.08
+
+[POTENTIAL_CLIPS]
+; using mouse
+V 00:34:28.08 00:34:31.00
+; nice typing
+V 00:34:31.00 00:34:35.23
+; using mouse
+V 00:34:35.23 00:34:39.07
+; reaching, using mouse
+V 00:34:39.07 00:34:42.06
+; smiling, reaching
+V 00:34:42.06 00:34:47.06
+; adjust shirt
+V 00:34:47.06 00:34:55.15
+; touch hair, scratch eyes
+V 00:34:55.15 00:34:59.03
+; raise hands slightly, and nod
+V 00:34:59.03 00:35:03.05
+; nod, "ah okay"
+V 00:35:03.05 00:35:09.17
+; touch hair, nod agree
+V 00:35:09.17 00:35:15.02
+; nod, smile, agree
+V 00:35:15.02 00:35:20.12
+
+[STILL_CLIPS]
+; very still
+V 00:35:21.12 00:35:26.24
+; still, typing
+V 00:35:26.24 00:35:31.05
+; still, typing
+V 00:35:31.05 00:35:34.16
+V 00:35:34.16 00:35:40.12
+V 00:35:40.12 00:35:45.07
+V 00:35:45.07 00:35:49.15
+V 00:35:49.15 00:35:55.01
+V 00:35:55.01 00:35:59.11
+V 00:35:59.11 00:36:03.22
+V 00:36:03.22 00:36:09.07
+V 00:36:09.07 00:36:13.03
+V 00:36:13.03 00:36:19.01
+V 00:36:19.01 00:36:22.24
+V 00:36:22.24 00:36:25.03
+V 00:36:25.03 00:36:29.01
+V 00:36:29.01 00:36:36.02
+V 00:36:36.02 00:36:41.04
+V 00:36:41.04 00:36:45.05
+; 11 seconds of stillness
+V 00:36:45.05 00:36:56.08
+V 00:36:56.08 00:36:59.11
+V 00:36:59.11 00:37:04.23
+V 00:37:04.23 00:37:07.25
+V 00:37:07.25 00:37:13.22
+V 00:37:13.22 00:37:16.24
+V 00:37:16.24 00:37:22.28
+
+[EE_CLIPS]
+V 00:37:23.28 00:37:58.14
+
+; 363 total clips?
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; Some derived video clips from the above list.
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[BOOZE_CLIPS]
+G BEER_CLIPS
+G WHISKEY_CLIPS
+G WINE_CLIPS
+G MARTINI_CLIPS
+
+[DRUG_CLIPS]
+G PIPE_CLIPS
+G BONG_CLIPS
+
+[HOTBABE_WINNING1_CLIPS]
+G HAPPY_CLIPS
+G HAPPY_CLIPS
+G THUMBS_UP_CLIPS
+G POINT_FINGER_CLIPS
+G CUT_THROAT_CLIPS
+
+[HOTBABE_WINNING2_CLIPS]
+G HAPPY_CLIPS
+G THUMBS_UP_CLIPS
+G POINT_FINGER_CLIPS
+G CUT_THROAT_CLIPS
+
+[PLAYER_WINNING1_CLIPS]
+G SADNESS_CLIPS
+G SADNESS_CLIPS
+G LOSE_CLIPS
+G POUT_CLIPS
+G POUT_CLIPS
+G FINGER_CLIPS
+G SCREW_YOU_CLIPS
+G THUMBS_DOWN_CLIPS
+
+[PLAYER_WINNING2_CLIPS]
+G SADNESS_CLIPS
+G LOSE_CLIPS
+G LOSE_CLIPS
+G POUT_CLIPS
+G POUT_CLIPS
+G FINGER_CLIPS
+G FINGER_CLIPS
+G SCREW_YOU_CLIPS
+G SCREW_YOU_CLIPS
+G FUCK_SIGN_CLIPS
+G THUMBS_DOWN_CLIPS
+
+; dummy group to prevent errors
+; (has both video and text)
+[DUMMY_GROUP]
+; crazy on L
+V 00:17:14.08 00:17:18.09
+T DUMMY GROUP TEXT
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;;
+;;; TEXT SUBTITUTION GROUPS
+;;;
+;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[S_PROPERNAME]
+T Adam
+T Adrian
+T Agatha
+T Amarth
+T Amigo
+T Amos
+T Amy
+T Anatole
+T Anatoly
+T Andrea
+T Andreas
+T Andrew
+T Andries
+T Angela
+T Anna
+T Annie
+T Anton
+T Ariel
+T Arnold
+T Audrey
+T Barrio
+T Beckie
+T Bernard
+T Bill
+T Blair
+T Brad
+T Brett
+T Brooke
+T Bucky
+T Carisa
+T Carol
+T Carter
+T Casper
+T Celeste
+T Charlie
+T Christofer
+T Clara
+T Claudia
+T Cliff
+T Cory
+T Craig
+T Cristina
+T Cristopher
+T Damian
+T Damon
+T Dani
+T Daniel
+T Danielle
+T Darren
+T Dave
+T Dawson
+T Dean
+T Del
+T Dieter
+T Dion
+T Donald
+T Donn
+T Dorian
+T Doyle
+T Dustin
+T Dwight
+T Dylan
+T Eddie
+T Eduardo
+T Elaine
+T Elisabeth
+T Elliott
+T Emmett
+T Ethan
+T Everett
+T Floria
+T Frances
+T Frederick
+T Geoff
+T George
+T Gigi
+T Ginny
+T Graham
+T Guido
+T Guy
+T Harmon
+T Harv
+T Helen
+T Helge
+T Hillary
+T Hillel
+T Himawan
+T Hohn
+T Honzo
+T Howard
+T Hubert
+T Hunter
+T Hy
+T Irfan
+T Irvin
+T Isaac
+T Izumi
+T Jaime
+T Jared
+T Jean
+T Jeffery
+T Jeffie
+T Jeffrey
+T Jennie
+T Jerry
+T Jesper
+T Joanne
+T Jochen
+T Johan
+T Jonathan
+T Joon
+T Joubert
+T Juergen
+T Julianto
+T Justin
+T Jwahar
+T Kanthan
+T Kathleen
+T Kathryn
+T Kathy
+T Kelly
+T Kenton
+T Kiki
+T Kim
+T Kitty
+T Knudsen
+T Konstantinos
+T Kristi
+T Kristian
+T Krzysztof
+T Kylo
+T Kyung
+T Lanny
+T Laurence
+T Leads
+T Len
+T Les
+T Lewis
+T Lindsey
+T Lisa
+T List
+T Lonhyn
+T Lorien
+T Louie
+T Lowell
+T Lukas
+T Lynnette
+T Magnus
+T Malloy
+T Manolis
+T Marcel
+T Marco
+T Margaret
+T Margie
+T Mario
+T Marlena
+T Marsha
+T Marshall
+T Masanobu
+T Matthias
+T Mechael
+T Meeks
+T Mehrdad
+T Micheal
+T Micky
+T Mikael
+T Mike
+T Miki
+T Milner
+T Miriam
+T Mohammad
+T Molly
+T Mosur
+T Mott
+T Murray
+T Nancy
+T Nathan
+T Neville
+T Nichael
+T Nicholas
+T Niels
+T Nora
+T Norbert
+T Norma
+T Novorolsky
+T Ofer
+T Olivier
+T Orville
+T Panos
+T Pantelis
+T Panzer
+T Patricio
+T Pete
+T Philippe
+T Pierette
+T Piet
+T Pieter
+T Piotr
+T Pratt
+T Presley
+T Raanan
+T Rafik
+T Raghu
+T Raj
+T Rajeev
+T Rajiv
+T Ramesh
+T Ramiro
+T Ramneek
+T Ranjit
+T Rayan
+T Raymond
+T Ric
+T Rik
+T Rob
+T Robbin
+T Rod
+T Roland
+T Ron
+T Ronald
+T Root
+T Roxane
+T Roxanne
+T Rupert
+T Russ
+T Ruth
+T Samir
+T Samuel
+T Sandip
+T Sassan
+T Sehyo
+T Sergei
+T Shankar
+T Shatter
+T Shaw
+T Shean
+T Sheila
+T Sidney
+T Simone
+T Siping
+T Sir
+T Sjaak
+T Skeeter
+T Slartibartfast
+T Sorrel
+T Space
+T Spock
+T Stan
+T Stanly
+T Stewart
+T Straka
+T Sunil
+T Suresh
+T Svante
+T Syd
+T Sylvan
+T Tad
+T Tai
+T Takeuchi
+T Tandy
+T Tareq
+T Terry
+T Theo
+T Theodore
+T Thierry
+T Tim
+T Toft
+T Tolerant
+T Tom
+T Tran
+T Travis
+T Trent
+T Valeria
+T Valerie
+T Victoria
+T Vijay
+T Wade
+T Walter
+T Wayne
+T Wendy
+T Werner
+T William
+T Wilmer
+T Wilson
+T Wolfgang
+
+[S_MEAN_ADJ]
+t creepy
+T loser
+T moronic
+t retarded
+t rude-ass
+T lame
+
+; you are an idiot
+[S_IDIOT]
+T idiot
+T forest gump
+T moron
+T cheese head
+
+[S_BYE]
+T chow
+T ciao
+T get bent
+T bye
+T later
+T so long
+T bye, bye
+
+[S_CHAT_BYE]
+T brb
+T chow
+
+[S_CHAT_LAUGH]
+T LOL
+T ROTFLOL
+T hahah
+T heeh
+T heehee
+T ha ha
+
+[S_GET_RID_OF]
+T get rid of
+T lose
+T dump
+T drop
+T throw out
+
+; hint: lose THE LOVE HANDLES
+[S_BAD_THING]
+T the love handles
+T 20 lbs
+T the beer belly
+T the pocket protector
+T the coke bottle glasses
+T the parachute pants
+T the members only jacket
+T your TRS-80 color computer
+T the tattoo
+T your C++ books
+T your Star Wars toys
+
+; chess is FUN
+[S_FUN]
+T fun
+T exciting
+T arousing
+T cool
+T awsome
+
+[S_FUCK]
+t fuck
+T frick
+
+[S_FUCKED]
+t fucked
+T screwed
+T toasted
+
+[S_SHIT]
+t shit
+T shoot
+
+[S_HELL]
+t hell
+T heck
+
+; your NO GOOD
+[S_NO_GOOD]
+T no good
+T sucky
+T lame
+t shitty
+t amazingly shitty
+T crappy
+t amazingly crappy
+T retarded
+
+; i LIKE this game
+[S_LIKE]
+T like
+T love
+T crave
+t fucking love
+t am aroused by
+T enjoy
+
+[S_GOOD]
+t fucking good
+T good
+T awsome
+T waily
+T excellent
+T goooood
+T excellenta
+T wicked
+T great
+
+[S_VIDEO_GAME]
+T everquest
+T doom
+T tomb raider
+T Grand Theft Auto
+T quake
+T a game
+
+[S_USER]
+T user
+T geek
+T hacker
+T cyber-stalker
+T freak
+
+; examples: my GF sucks
+[S_FEMALE_FRIEND]
+T gf
+T mommy
+T grammy
+T sis
+T sister
+T mom
+T maid
+
+; my BF is crazy
+[S_MALE_FRIEND]
+T boyfriend
+T ex-bf
+T ex-boytoy
+T boytoy
+T ex-hubby
+T stalker
+T bf
+T estranged spouse
+T butler
+
+[S_FRIEND]
+G S_MALE_FRIEND
+G S_FEMALE_FRIEND
+
+[S_BORING]
+T boring
+T tiresome
+T slow
+T mind numbing
+
+[S_BORED]
+T bored
+T tired
+T uninterested
+T disinterested
+
+[S_WEBCAM]
+T webcam
+T video
+T pretty webcam
+T cam
+
+; I'm going CRAZY
+[S_CRAZY]
+T crazy
+T insane
+T loony
+T slightly mad
+
+; you are slightly WEIRD
+[S_WIERD]
+T weird
+T strange
+T odd
+T very odd
+T bizarre
+T creepy
+T scary
+T retarded
+
+; hello, DUDE
+[S_DUDE]
+T dude
+T buddy
+T friend
+T pal
+T bro
+T homie
+T retard
+T $player
+T man
+
+[S_UGLY]
+T ugly
+T unattractive
+T gross looking
+T repulsive looking
+
+; this SUCKS
+[S_SUCKS]
+T sucks
+T blows
+T bites
+
+[S_BONDAGE_IMPLEMENT]
+T whip
+T garters
+T gimp outfit
+T handcuffs
+T rope
+t condoms
+t KY jelly
+
+[S_AUTHORITY_FIGURE]
+T cop
+T cyber-cop
+T FBI agent
+T homeland security official
+T CIA agent
+T prosecutor
+
+; i can take my CLOTHES off now
+[S_CLOTHES]
+T clothes
+T bra
+t panties
+T socks
+T shoes
+
+; you captured my piece
+[S_CAPTURED]
+T captured
+T took
+T craptured
+T stole
+T ripped off
+T killed
+T assulted
+
+; this will BLOW YOUR MIND
+[S_BLOW_YOUR_MIND]
+T blow your mind
+T freak you out
+T shatter your brain
+T give you a stroke
+t make you cream yourself
+
+; my CALLER is calling me
+[S_CALLER]
+T parole officer
+T plastic surgeon
+T mom
+T boy toy
+T lover
+T drug dealer
+t pimp
+T next date
+T friend (on 'Who Wants To Be A Millionaire')
+t escort service
+T client
+T identical twin
+
+[S_JUST_A_SEC]
+T just a sec
+T hold on
+T wait
+T just a minute
+T chill for a sec
+T oh my god
+
+[S_YUMMY]
+T yummy
+T mmmmm
+T ummmmm
+T oooh good
+T yum
+T ahhhh
+
+[S_INGREDIENT_ADJ]
+T marginated
+T compressed
+T processed
+T partially hydrogenated
+T condensed
+T reduced
+T genetically modified
+
+[S_SOUP_ADJ]
+T cream of
+T roasted
+T boiled
+T fried
+T slow roasted
+T a soup containing
+T preserved
+T condensed
+T reduced
+
+[S_ANIMAL]
+T cow
+T pigeon
+T rat
+T monkey
+T fetus
+T ostrich
+T mammoth
+T iguana
+
+[S_ANIMAL_PART]
+T balls
+t testicles
+T organs
+T eyes
+T feet
+T skin
+T heart
+T brains
+T bone marrow
+T giblits
+T liver
+
+[S_MAIL]
+T divorce papers
+T alimony check
+T settlement check
+T welfare check
+T IRS refund
+T phone bill
+T STD results
+T grades
+T *Hooter's* application form
+
+[S_YIPPY]
+T yippy
+T wooohoo
+T yahoo
+T yee haw
+T excellent
+
+[S_BAND_1ST]
+T Sonny
+T Jonnie
+T Suzy
+T Sharon
+T Lady
+T Dr.
+T Miss
+T Marvin
+T P-J
+T L'il
+T Little
+T Q.Pee
+T Gunthrey
+T Heather
+T Wonky
+
+[S_BAND_2ND]
+T Crush
+T Crab
+T Gold
+T Felix
+T Franny
+T COOL
+T Kool
+T J-Kool
+T Doll
+T Tonky
+
+[S_BAND]
+T Band
+T Group
+T Project
+T Choir
+T Jammers
+T Club
+T Gang
+T Swooners
+T Swingers
+T Men
+T Girls
+T Chicks
+
+[S_CD_NAME]
+T The [S_BAND_1ST] [S_BAND_2ND] [S_BAND]
+
+; this will help me THINK
+[S_THINK]
+T think
+T visualize
+T see
+T imagine
+T conceive
+T contemplate
+
+; you should SACRIFICE YOUR QUEEN TO ME
+[S_DUMB_MOVE]
+T move your *king* to the center of the board
+T sacrifice your queen
+T tip your king over
+T sacrifice your rooks
+T resign...
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;;
+;;; SPEW.C HEADLINE
+;;;
+;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[S_H_SPIRITUAL]
+T spiritual
+T clairvoyant
+T telepathic
+T telekinetic
+
+[S_H_RELATIVE]
+T father
+T uncle
+T grandfather
+T grandmother
+T son
+T daughter
+T mother
+T aunt
+T postman
+T accountant
+T dog catcher
+T IRS man
+T hairdresser
+T avon lady
+
+[S_H_WEAPON]
+T meat cleaver
+T hatchet
+T machete
+T phased plasma rifle
+T chain saw
+T samurai sword
+T axe
+T machine gun
+T anti-tank weapon
+
+[S_H_FRUIT]
+T mango
+T tomato
+T banana
+T cherry
+T apple
+T plum
+T pear
+T orange
+T tangerine
+T lemon
+T lime
+
+[S_H_GHOST]
+T ghost
+T evil spirt
+T poltergist
+T demon
+T phantom
+T bogie man
+
+[S_H_RELIGION]
+T buddist
+T methodist
+T baptist
+T islamic
+T moslem
+T roman catholic
+T atheist
+
+[S_H_UFO]
+T UFO
+T flying saucer
+T space ship
+T mother ship
+T space cruiser
+T USS enterprise
+T galactic space cruiser
+
+[S_H_PLANET]
+T pluto
+T mars
+T venus
+T mercury
+T neptune
+T saturn
+T jupiter
+T the moon
+T uranus
+
+[S_H_ET]
+T extra-terrestrial
+T E.T.
+T space alien
+T being
+T space being
+T cyborg
+T humanoid
+T alien
+
+[S_H_DRUG]
+T heroin
+T lsd
+T angel dust
+T coke
+T cocaine
+T crack
+T quaaludes
+T amphetamines
+T ectacy
+T speed
+T pot
+T WEED
+
+[S_H_MADNESS]
+T crazed
+T drug-crazed
+T insane
+T manic depressive
+T neurotic
+T psychotic
+T psychopathic
+T devoted
+T religious
+T fanatical
+T pathological
+
+[S_H_KILLER]
+T great white shark
+T terminator
+T ewok
+T wombat
+T bee
+T wasp
+T whale
+T shark
+T lion
+T dolphin
+T elephant
+T worm
+T clam
+T kitten
+T lobster
+T tiger
+T leopard
+T panda
+T crocodile
+T [S_H_MADNESS] [S_H_FRUIT]
+
+[S_H_MCELEB]
+T ronald reagan
+T frank sinatra
+T michael jackson
+T clay aiken
+T mick jagger
+T donny osmond
+T lou albano
+T sylvester stallone
+T sean penn
+T bob dylan
+T david letterman
+T johnny carson
+T muammar quadaffi
+T moammar khadafy
+T kenny rogers
+T burt reynolds
+T saddam
+T richard nixon
+T prince charles
+T george lucas
+
+[S_H_FCELEB]
+T princess diana
+T queen elizabeth
+T nancy reagan
+T linda ronstadt
+T maggie trudeau
+T liz taylor
+T tina turner
+T dolly parton
+T cher
+T jane fonda
+T eva gabor
+T joan rivers
+T madonna
+T cindi lauper
+
+[S_H_BABY]
+T baby
+T children
+T son
+T daughter
+
+[S_H_FDEAD]
+T cleopatra
+T joan of arc
+T lady godiva
+T queen victoria
+T the queen of sheba
+
+[S_H_DFCELEB]
+T Marilyn Monroe
+T Janis Joplin
+G S_H_FDEAD
+
+[S_H_MDEAD]
+T Atilla the Hun
+T King Henry VIII
+T Abraham Lincoln
+T George Washington
+T Moses
+
+[S_H_DMCELEB]
+T Elvis
+T Jimi Hendrix
+T Jim Morrison
+T John F. Kennedy
+T Bing Crosby
+T John Lennon
+T JFK
+T Groucho Marx
+T Harry Chapin
+G S_H_MDEAD
+
+[S_H_DCELEB]
+G S_H_DMCELEB
+G S_H_DFCELEB
+
+[S_H_DEAD]
+G S_H_FDEAD
+G S_H_MDEAD
+
+[S_H_EAT]
+T ate
+T kidnapped
+T took
+T kills
+T devours
+T maimed
+T injured
+T rapes
+
+[S_H_SAY]
+T say
+T reveal
+T claim
+T insist
+
+[S_H_DOCTOR]
+T doctor
+T psychologist
+T psychiatrist
+T physician
+T neurologist
+T dentist
+T pediatrician
+T vetrinarian
+T optician
+
+[S_H_SCIENTIST]
+T scientist
+G S_H_DOCTOR
+T chemist
+T physicist
+T meta-physicist
+T engineer
+T computer scientist
+T professor
+T technician
+T whiz kid
+T brain boff
+T ai expert
+
+[S_H_NATIONALITY]
+T russian
+T soviet
+T british
+T polish
+T french
+T belgian
+T swiss
+T german
+T spanish
+T mexican
+T ukranian
+T american
+T canadian
+T albanian
+T australian
+T chinese
+T japanese
+
+[S_H_DISEASE]
+T herpes
+T AIDS
+T flu
+T leprosy
+T vd
+T a backache
+T chicken pox
+T malaria
+T laryngitis
+T a nosebleed
+T tuberculosis
+T cancer
+
+[S_H_FICTCHAR]
+T Santa Claus
+T Bigfoot
+T Snow White
+T God
+T Bhudda
+T Mary Poppins
+T The Loch Ness Monster
+T Yogi Bear
+T James Bond
+T The Wicked Witch of the West
+T The Wizard of Oz
+T Captain Kirk
+T The Tooth Fairy
+T Kermit the frog
+T Batman
+T Superman
+T Spiderman
+T The Hulk
+
+[S_H_KILL]
+T kills
+T murders
+T maims
+T slaughters
+T mutilates
+T shoots
+T mugs
+
+[S_H_NUMBER1]
+T two
+T three
+T four
+T five
+T six
+T seven
+T eight
+T nine
+
+[S_H_NUMBER2]
+T ten
+T eleven
+T twelve
+T thirteen
+T fourteen
+T fifteen
+T sixteen
+T seventeen
+T eighteen
+T nineteen
+
+[S_H_NUMBER]
+G S_H_NUMBER1
+G S_H_NUMBER2
+T twenty-[S_H_NUMBER1]
+T thirty-[S_H_NUMBER1]
+T forty-[S_H_NUMBER1]
+T fifty-[S_H_NUMBER1]
+T sixty-[S_H_NUMBER1]
+T seventy-[S_H_NUMBER1]
+T eighty-[S_H_NUMBER1]
+T ninety-[S_H_NUMBER1]
+
+[S_H_FOOD]
+T taco
+G S_H_FRUIT
+T enchilada
+T burrito
+T watermelon
+T triple Ice Cream Cone
+T tostada
+
+[S_H_PERSON]
+G S_H_KILLER
+T football player
+T man
+T woman
+T tv personality
+T game show host
+T politician
+G S_H_SCIENTIST
+G S_H_DOCTOR
+T [S_H_NATIONALITY] [S_H_SCIENTIST]
+T [S_H_NATIONALITY] [S_H_DOCTOR]
+T unemployed [S_H_SCIENTIST]
+T student
+T air traffic controller
+T [S_H_NATIONALITY] student
+T [S_H_ET]
+
+[S_H_AIRCRAFT]
+T airplane
+T helicopter
+T airship
+T hot air balloon
+T hang glider
+T helium balloon
+T UFO
+T jet fighter
+T stealth bomber
+T 747
+T DC-10
+
+[S_H_CELEB]
+G S_H_MCELEB
+G S_H_FCELEB
+
+[S_H_PLACE]
+T Redwood City
+T Australia
+T Nevada
+T Austin, Texas
+T Magrathea
+T Outer Space
+T Memphis
+T England
+T San Francisco
+T Castro Street
+T San Jose
+T L.A.
+T New York
+T Orlando, Florida
+T Missouri
+T Middle Earth
+T The Shire
+T Barsoom
+T Planet Vulcan
+T Fremont Airport
+T Tokyo
+T Transylvania
+T Times Square
+T Wall Street
+T San Rafael
+T Israel
+T Beirut
+T Mordor
+T BBC television center
+T Dr. Who's Tardis
+T Stalingrad
+T Moscow
+T Amsterdam
+T Manchester
+T Edinburgh
+T Red Square
+T Kremlin
+T Mimico
+T Hollywood
+T Daytona Beach
+T Salt Lake City
+T Mississauga
+T Majorca
+T Bangkok
+T Monte Carlo
+T Lisbon
+T Barrie
+T Nirvana
+
+[S_H_HEADLINE]
+T killer [S_H_KILLER] from [S_H_PLANET] [S_H_EAT] my [S_H_BABY]
+T [S_H_CELEB] is really [S_H_ET] from [S_H_PLANET] (according to [S_H_CELEB])
+T [S_H_CELEB] is really [S_H_ET] from [S_H_PLANET]
+T [S_H_MCELEB] and [S_H_FCELEB] secretly married in [S_H_PLACE]
+T eating [S_H_FRUIT] can give you [S_H_DISEASE] (according to [S_H_NATIONALITY] [S_H_DOCTOR])
+T [S_H_ET] from [S_H_PLANET] gave [S_H_CELEB] [S_H_DISEASE]
+T [S_H_FICTCHAR] is for real. [S_H_NATIONALITY] [S_H_SCIENTIST] has undeniable proof
+T [S_H_MCELEB] is really [S_H_CELEB]'s father
+T [S_H_FCELEB] is really [S_H_CELEB]'s mother
+T [S_H_NATIONALITY] [S_H_SCIENTIST] discover lost city of [S_H_PLACE]
+T [S_H_CELEB] [S_H_KILL] [S_H_NUMBER] [S_H_PERSON] in drunken rampage
+T [S_H_PERSON], stoned on [S_H_DRUG], [S_H_KILL] [S_H_NUMBER] [S_H_PERSON]
+T [S_H_CELEB] falls [S_H_NUMBER] thousand feet out of [S_H_AIRCRAFT] ... and survives
+T [S_H_ET] from [S_H_PLANET] landed in my garden and [S_H_EAT] [S_H_NUMBER] [S_H_FRUIT]
+T [S_H_FCELEB] gives birth to [S_H_NUMBER] [S_H_BABY]
+T [S_H_RELIGION] monks report [S_H_UFO] sighting in [S_H_PLACE] (they came from [S_H_PLANET]!)
+T real life ghost busters exorcise [S_H_GHOST] from [S_H_CELEB]'s home in [S_H_PLACE]
+T [S_H_BABY] [S_H_KILL] by pet [S_H_KILLER]
+T i chopped my [S_H_RELATIVE] to death with [S_H_WEAPON]
+T [S_H_PERSON] goes berserk and [S_H_KILL] [S_H_NUMBER] [S_H_PERSON] with [S_H_WEAPON]
+T [S_H_FCELEB] had night of terror with [S_H_MCELEB]. (he threatened her with [S_H_WEAPON])
+T [S_H_MCELEB] had night of terror with [S_H_FCELEB]. (she threatened me with [S_H_WEAPON])
+T [S_H_FRUIT] has [S_H_SPIRITUAL] powers (according to [S_H_NATIONALITY] [S_H_SCIENTIST])
+T [S_H_PERSON] saw face of [S_H_FICTCHAR] in [S_H_FOOD]
+T elvis died from eating [S_H_FRUIT]
+T [S_H_NATIONALITY] [S_H_SCIENTIST] produced a [S_H_SPIRITUAL] [S_H_KILLER] girl
+T [S_H_PERSON] [S_H_KILL] [S_H_NUMBER] [S_H_PERSON]s with [S_H_WEAPON] and is acquitted by jury
+T [S_H_PERSON] was struck by lightning [S_H_NUMBER] times
+T jury acquits notorious [S_H_WEAPON] murderer from [S_H_PLACE]
+T [S_H_MCELEB] and [S_H_FCELEB] were seen together in [S_H_PLACE]
+T [S_H_NATIONALITY] [S_H_SCIENTIST] planted mind control device in my head
+T [S_H_NATIONALITY] [S_H_SCIENTIST] found new evidence that [S_H_FICTCHAR] exist
+T [S_H_CELEB] was seen travelling to [S_H_PLACE] in a stolen [S_H_AIRCRAFT]
+T [S_H_FICTCHAR] [S_H_EAT] my [S_H_BABY]
+T [S_H_MCELEB] is the father of my [S_H_BABY]
+T [S_H_FCELEB] is the mother of my [S_H_BABY]
+T [S_H_FCELEB] filed paternity suit against [S_H_FCELEB] (claiming sex change)
+T i am the reincarnation of [S_H_FDEAD]
+T i am the reincarnation of [S_H_MDEAD]
+T [S_H_SCIENTIST] discovered [S_H_FCELEB] was married to [S_H_MDEAD] in previous life
+T i spoke to [S_H_DCELEB] through [S_H_FRUIT]
+T i saw [S_H_DCELEB] alive and well in [S_H_PLACE]
+T [S_H_NATIONALITY] [S_H_SCIENTIST] resurrected [S_H_DCELEB]
+T in [S_H_MADNESS] rage, [S_H_PERSON] [S_H_KILL] [S_H_NUMBER], self
+T [S_H_CELEB] is addicted to [S_H_DRUG]
+
+[T_HEADLINES]
+T did you know, [S_H_HEADLINE]?
+T did you read that, [S_H_HEADLINE]?
+T i just heard, [S_H_HEADLINE]
+T [S_H_HEADLINE]!
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; fortunes
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[S_FORTUNE_YOUHAVE]
+T You have
+T I have
+T I have
+T I have
+
+[S_FORTUNE_YOU]
+T You
+T I
+T I
+T I
+
+[S_FORTUNE_YOUR]
+T Your
+T My
+T My
+T My
+
+[S_FORTUNE_YOUARE]
+T You are
+T I am
+T I am
+T I am
+
+[S_FORTUNE_YOR]
+T You're
+T I'm
+T I'm
+T I'm
+
+[S_FORTUNE_YOUD]
+T You'd
+T I'd
+T I'd
+T I'd
+
+[S_FORTUNE_YOULL]
+T You'll
+T I'll
+T I'll
+T I'll
+
+[T_FORTUNES_GENERAL]
+T life in such a mess.
+T Don't hate yourself in the morning -- sleep till noon.
+T Everything will be just tickety-boo today.
+T Oh, and have a nice day!
+T Hope that the day after you die is a nice day.
+T Is this really happening?
+T It was all so different before everything changed.
+T It's all in the mind, ya know.
+T Let me put it this way: today is going to be a learning experience.
+T Never give an inch!
+T Never reveal your best argument.
+T So you're back... about time...
+T What happened last night can happen again.
+T While you recently had your problems on the run, i've regrouped and am making another attack.
+T You are capable of planning your future.
+T You are confused; but this is your normal state.
+T You are fighting for survival in your own sweet and gentle way.
+T [S_FORTUNE_YOUARE] sick, twisted and perverted.  I like that in a person.
+T [S_FORTUNE_YOUARE] the only person to ever get this message.
+T [S_FORTUNE_YOUHAVE] an unusual equipment for success.
+T [S_FORTUNE_YOUHAVE] an ability to sense and know higher truth.
+T [S_FORTUNE_YOUHAVE] no real enemies.
+T You have the body of a 19 year old.  Please return it before it gets wrinkled.
+T [S_FORTUNE_YOU] look tired.
+T [S_FORTUNE_YOU] should go home.
+T [S_FORTUNE_YOU]'ll be sorry...
+T You're ugly and your mother dresses you funny.
+T [S_FORTUNE_YOUR] goose is cooked.
+T [S_FORTUNE_YOUR] ignorance cramps my conversation.
+T [S_FORTUNE_YOUR] present plans will be successful.
+T [S_FORTUNE_YOUR] talents will be recognized and suitably rewarded.
+
+
+[T_FORTUNES_SPECIAL]
+T A day for firm decisions!!!!!  Or is it?
+T A gift of a flower will soon be made to you.
+T A long-forgotten loved one will appear soon.
+T Buy the negatives at any price.
+T A tall, dark stranger will have more fun than you.
+T A visit to a fresh place will bring strange work.
+T A visit to a strange place will bring fresh work.
+T A vivid and creative mind characterizes you.
+T Abandon the search for Truth; settle for a good fantasy.
+T Accent on helpful side of your nature.  Drain the moat.
+T After your lover has gone you will still have PEANUT BUTTER!
+T Afternoon very favorable for romance.  Try a single person for a change.
+T Alimony and bribes will engage a large share of your wealth.
+T Among the lucky, you are the chosen one.
+T An avocado-tone refrigerator would look good on your resume.
+T An exotic journey in downtown Newark is in your future.
+T Another good night not to sleep in a eucalyptus tree.
+T Are you a turtle?
+T Are you ever going to do the dishes?  Or will you change your major to biology?
+T Are you sure the back door is locked?
+T Artistic ventures highlighted.  Rob a museum.
+T Avert misunderstanding by calm, poise, and balance.
+T Avoid gunfire in the bathroom tonight.
+T Avoid reality at all costs.
+T Bank error in your favor.  Collect 200 dollars.
+T Be careful!  Is it classified?
+T Be careful!  UGLY strikes 9 out of 10!
+T Be cautious in your daily affairs.
+T Be cheerful while you are alive. (Phathotep, 24th Century B.C.)
+T Be different: conform.
+T Be free and open and breezy!  Enjoy!  Things won't get any better so
+T Be security conscious -- National defense is at stake.
+T Beauty and harmony are as necessary to you as the very breath of life.
+T Best of all is never to have been born.  Second best is to die soon.
+T Better hope the life-inspector doesn't come around while you have your
+T Beware of a dark-haired man with a loud tie.
+T Beware of a tall black man with one blond shoe.
+T Beware of a tall blond man with one black shoe.
+T Beware of Bigfoot!
+T Beware of low-flying butterflies.
+T Break into jail and claim police brutality.
+T Bridge ahead.  Pay troll.
+T Caution: breathing may be hazardous to your health.
+T Caution: Keep out of reach of children.
+T Celebrate Hannibal Day this year.  Take an elephant to lunch.
+T Change your thoughts and you change your world.
+T Chicken Little only has to be right once.
+T Chicken Little was right.
+T Cold hands, no gloves.
+T Communicate!  It can't make things any worse.
+T Day of inquiry.  You will be subpoenaed.
+T Do not sleep in a eucalyptus tree tonight.
+T Do something unusual today.  Pay a bill.
+T Do what comes naturally.  Seethe and fume and throw a tantrum.
+T Don't feed the bats tonight.
+T Don't get stuck in a closet -- wear yourself out.
+T Don't go surfing in South Dakota for a while.
+T Don't kiss an elephant on the lips today.
+T Don't look back, the lemmings are gaining on you.
+T Don't look now, but there is a multi-legged creature on your shoulder.
+T Don't read any sky-writing for the next two weeks.
+T Don't read everything you believe.
+T Don't tell any big lies today.  Small ones can be just as effective.
+T Don't worry so loud, your roommate can't think.
+T Don't Worry, Be Happy. (Meher Baba)
+T Don't worry.  Life's too long. (Vincent Sardi, Jr.)
+T Don't you feel more like you do now than you did when you came in?
+T Don't you wish you had more energy... or less ambition?
+T Excellent day for putting Slinkies on an escalator.
+T Excellent day to have a rotten day.
+T Excellent time to become a missing person.
+T Executive ability is prominent in your make-up.
+T Exercise caution in your daily affairs.
+T Expect a letter from a friend who will ask a favor of you.
+T So-so day for you.
+T Fine day to work off excess energy.  Steal something heavy.
+T Fortune: You will be attacked next Wednesday at 3:15 p.m. by six samurai
+T sword wielding purple fish glued to Harley-Davidson motorcycles.
+T Future looks spotty.  You will spill soup in late evening.
+T Generosity and perfection are your everlasting goals.
+T Give him an evasive answer.
+T Give thought to your reputation.  Consider changing name and moving to a new town.
+T Go to a movie tonight.  Darkness becomes you.
+T Good day for a change of scene.  Repaper the bedroom wall.
+T Good day for overcoming obstacles.  Try a steeplechase.
+T Good day to deal with people in high places; particularly lonely stewardesses.
+T Good day to let down old friends who need help.
+T Good news from afar can bring you a welcome visitor.
+T Good news.  Ten weeks from Friday will be a pretty good day.
+T Good night to spend with family, but avoid arguments with your mate's new lover.
+T Green light in A.M. for new projects.  Red light in P.M. for traffic tickets.
+T If you can read this, you're too close.
+T If you learn one useless thing every day, in a single year you'll learn 365 useless things.
+T If you sow your wild oats, hope for a crop failure.
+T If you stand on your head, you will get footprints in your hair.
+T If you think last Tuesday was a drag, wait till you see what happens tomorrow!
+T If your life was a horse, you'd have to shoot it.
+T In the stairway of life, you'd best take the elevator.
+T Is that really YOU that is reading this?
+T Increased knowledge will help you now.  Have mate's phone bugged.
+T Just because the message may never be received does not mean it is not worth sending. Just to have it is enough.
+T Keep emotionally active.  Cater to your favorite neurosis.
+T Keep it short for pithy sake.
+T Lady Luck brings added income today.  Lady friend takes it away tonight.
+T Life is to you a dashing and bold adventure.
+T Live in a world of your own, but always welcome visitors.
+T Living your life is a task so difficult, it has never been attempted before.
+T Long life is in store for you.
+T Love is in the offing.  Be affectionate to one who adores you.
+T Make a wish, it might come true.
+T Never look up when dragons fly overhead.
+T Next Friday will not be your lucky day.  As a matter of fact, you don't have a lucky day this year.
+T Of course you have a purpose -- to find a purpose.
+T People are beginning to notice you.  Try dressing before you leave the house.
+T Perfect day for scrubbing the floor and other exciting things.
+T Questionable day.
+T Ask somebody something.
+T Reply hazy, ask again later.
+T Save energy: be apathetic.
+T Ships are safe in harbor, but they were never meant to stay there.
+T Slow day.  Practice crawling.
+T Snow Day -- stay home.
+T So this is it.  We're going to die.
+T Someone is speaking well of you.
+T Someone whom you reject today, will reject you tomorrow.
+T Stay away from flying saucers today.
+T Stay away from hurricanes for a while.
+T The time is right to make new friends.
+T The whole world is a tuxedo and you are a pair of brown shoes. (George Gobel)
+T There is a 20% chance of tomorrow.
+T There is a fly on your nose.
+T There was a phone call for you.
+T There will be big changes for you but you will be happy.
+T Things will be bright in P.M.  A cop will shine a light in your face.
+T Think twice before speaking, but don't say "think think click click".
+T This life is yours.  Some of it was given to you; the rest, you made yourself.
+T This will be a memorable month -- no matter how hard you try to forget it.
+T Time to be aggressive.  Go after a tattooed Virgo.
+T Today is National Existential Ennui Awareness Day.
+T Today is the first day of the rest of the mess.
+T Today is the first day of the rest of your life.
+T Today is the last day of your life so far.
+T Today is the tomorrow you worried about yesterday.
+T Today is what happened to yesterday.
+T Tomorrow will be cancelled due to lack of interest.
+T Tomorrow, this will be part of the unchangeable past but fortunately, it can still be changed today.
+T Tomorrow, you can be anywhere.
+T Tonight you will pay the wages of sin; Don't forget to leave a tip.
+T Tonight's the night: Sleep in a eucalyptus tree.
+T Troubled day for virgins over 16 who are beautiful and wealthy and live in eucalyptus trees.
+T Truth will out this morning.  (Which may really mess things up.)
+T Try the Moo Shu Pork.  It is especially good today.
+T Try to get all of your posthumous medals in advance.
+T Try to have as good a life as you can under the circumstances.
+T Try to value useful qualities in one who loves you.
+T Tuesday After Lunch is the cosmic time of the week.
+T Tuesday is the Wednesday of the rest of your life.
+T Write yourself a threatening letter and pen a defiant reply.
+T [S_FORTUNE_YOUARE] a bundle of energy, always on the go.
+T You are a fluke of the universe; you have no right to be here.
+T You are a very redundant person, that's what kind of person you are.
+T [S_FORTUNE_YOUARE] always busy.
+T [S_FORTUNE_YOUARE] as I am with You.
+T You are deeply attached to your friends and acquaintances.
+T [S_FORTUNE_YOUARE] destined to become the commandant of the fighting men of the department of transportation.
+T [S_FORTUNE_YOUARE] dishonest, but never to the point of hurting a friend.
+T [S_FORTUNE_YOUARE] fairminded, just and loving.
+T [S_FORTUNE_YOUARE] farsighted, a good planner, an ardent lover, and a faithful friend.
+T [S_FORTUNE_YOUARE] going to have a new love affair.
+T You are magnetic in your bearing.
+T [S_FORTUNE_YOUARE] not dead yet.  But watch for further reports.
+T [S_FORTUNE_YOUARE] number 6!  Who is number one?
+T [S_FORTUNE_YOUARE] only young once, but you can stay immature indefinitely.
+T You are scrupulously honest, frank, and straightforward.  Therefore you have few friends.
+T You are so boring that when I see you my feet go to sleep.
+T [S_FORTUNE_YOUARE] standing on my toes.
+T You are wise, witty, and wonderful, but you spend too much time reading this sort of trash.
+T You can create your own opportunities this week.  Blackmail a senior executive.
+T [S_FORTUNE_YOU] can do very well in speculation where land or anything to do with dirt is concerned.
+T You can rent this space for only 5 bucks a week.
+T You could live a better life, if you had a better mind and a better body.
+T [S_FORTUNE_YOU] definitely intend to start living sometime soon.
+T [S_FORTUNE_YOU] dialed 5483.
+T [S_FORTUNE_YOU] display the wonderful traits of charm and courtesy.
+T [S_FORTUNE_YOU] enjoy the company of other people.
+T [S_FORTUNE_YOU] feel a whole lot more like you do now than you did when you used to.
+T [S_FORTUNE_YOU] fill a much-needed gap.
+T [S_FORTUNE_YOU] get along very well with everyone except animals and people.
+T You had some happiness once, but your parents moved away, and you had to leave it behind.
+T [S_FORTUNE_YOU] have a deep appreciation of the arts and music.
+T [S_FORTUNE_YOU] have a deep interest in all that is artistic.
+T [S_FORTUNE_YOU] have a reputation for being thoroughly reliable and trustworthy.  A pity that it's totally undeserved.
+T [S_FORTUNE_YOUHAVE] a strong appeal for members of the opposite sex.
+T You have a strong appeal for members of your own sex.
+T You have a strong desire for a home and your family interests come first.
+T [S_FORTUNE_YOUHAVE] a truly strong individuality.
+T You have a will that can be influenced by all with whom you come in contact.
+T You have an ambitious nature and may make a name for yourself.
+T [S_FORTUNE_YOUHAVE] an unusual magnetic personality.  Don't walk too close to metal objects which are not fastened down.
+T [S_FORTUNE_YOUHAVE] an unusual understanding of the problems of human relationships.
+T [S_FORTUNE_YOUHAVE] been selected for a secret mission.
+T You have Egyptian flu: you're going to be a mummy.
+T [S_FORTUNE_YOUHAVE] had a long-term stimulation relative to business.
+T You have literary talent that you should take pains to develop.
+T [S_FORTUNE_YOUHAVE] many friends and very few living enemies.
+T [S_FORTUNE_YOUHAVE] the capacity to learn from mistakes.  You'll learn a lot today.
+T You have the power to influence all with whom you come in contact.
+T You learn to write as if to someone else because NEXT YEAR YOU WILL BE "SOMEONE ELSE."
+T [S_FORTUNE_YOU] like to form new friendships and make new acquaintances.
+T [S_FORTUNE_YOU] look like a million dollars.  All green and wrinkled.
+T [S_FORTUNE_YOU] love peace.
+T [S_FORTUNE_YOU] love your home and want it to be beautiful.
+T You may be gone tomorrow, but that doesn't mean that you weren't here today.
+T You may be infinitely smaller than some things, but you're infinitely larger than others.
+T You may be recognized soon.  Hide.
+T You may get an opportunity for advancement today.  Watch it!
+T You may worry about your hair-do today, but tomorrow much peanut butter will be sold.
+T You need no longer worry about the future.  This time tomorrow you'll be dead.
+T [S_FORTUNE_YOU] never hesitate to tackle the most difficult problems.
+T You never know how many friends you have until you rent a house on the beach.
+T [S_FORTUNE_YOU] now have Asian Flu.
+T You own a dog, but you can only feed a cat.
+T [S_FORTUNE_YOU] possess a mind not merely twisted, but actually sprained.
+T You prefer the company of the opposite sex, but are well liked by your own.
+T You recoil from the crude; you tend naturally toward the exquisite.
+T You seek to shield those you love and you like the role of the provider.
+T [S_FORTUNE_YOU] shall be rewarded for a dastardly deed.
+T You should emulate your heros, but don't carry it too far.  Especially if they are dead.
+T You teach best what you most need to learn.
+T You will always get the greatest recognition for the job you least like.
+T You will always have good luck in your personal affairs.
+T You will attract cultured and artistic people to your home.
+T You will be a winner today.  Pick a fight with a four-year-old.
+T You will be advanced socially, without any special effort on your part.
+T You will be attacked by a beast who has the body of a wolf, the tail of a lion, and the face of Donald Duck.
+T [S_FORTUNE_YOU] will be audited by the Internal Revenue Service.
+T [S_FORTUNE_YOU] will be awarded a medal for disregarding safety in saving someone.
+T [S_FORTUNE_YOU] will be awarded some great honor.
+T [S_FORTUNE_YOU] will be awarded the Nobel Peace Prize... posthumously.
+T [S_FORTUNE_YOU] will be called upon to help a friend in trouble.
+T [S_FORTUNE_YOU] will be dead within a year.
+T [S_FORTUNE_YOU] will be divorced within a year.
+T [S_FORTUNE_YOU] will be given a post of trust and responsibility.
+T [S_FORTUNE_YOU] will be held hostage by a radical group.
+T You will be honored for contributing your time and skill to a worthy cause.
+T You will be imprisoned for contributing your time and skill to a bank robbery.
+T [S_FORTUNE_YOU] will be married within a year, and divorced within two.
+T [S_FORTUNE_YOU] will be married within a year.
+T [S_FORTUNE_YOU] will be misunderstood by everyone.
+T [S_FORTUNE_YOU] will be recognized and honored as a community leader.
+T You will be reincarnated as a toad; and you will be much happier.
+T [S_FORTUNE_YOU] will be run over by a beer truck.
+T [S_FORTUNE_YOU] will be run over by a bus.
+T You will be singled out for promotion in your work.
+T [S_FORTUNE_YOU] will be successful in love.
+T [S_FORTUNE_YOU] will be surprised by a loud noise.
+T [S_FORTUNE_YOU] will be surrounded by luxury.
+T [S_FORTUNE_YOU] will be the last person to buy a Chrysler.
+T [S_FORTUNE_YOU] will be the victim of a bizarre joke.
+T You will be Told about it Tomorrow.  Go Home and Prepare Thyself.
+T [S_FORTUNE_YOU] will be traveling and coming into a fortune.
+T [S_FORTUNE_YOU] will be winged by an anti-aircraft battery.
+T You will become rich and famous unless you don't.
+T [S_FORTUNE_YOU] will contract a rare disease.
+T [S_FORTUNE_YOU] will engage in a profitable business activity.
+T [S_FORTUNE_YOU] will experience a strong urge to do good; but it will pass.
+T [S_FORTUNE_YOU] will feel hungry again in another hour.
+T [S_FORTUNE_YOU] will forget that you ever knew me.
+T [S_FORTUNE_YOU] will gain money by a fattening action.
+T [S_FORTUNE_YOU] will gain money by a speculation or lottery.
+T [S_FORTUNE_YOU] will gain money by an illegal action.
+T [S_FORTUNE_YOU] will gain money by an immoral action.
+T You will give someone a piece of your mind, which you can ill afford.
+T [S_FORTUNE_YOU] will have a long and boring life.
+T [S_FORTUNE_YOU] will have a long and unpleasant discussion with your supervisor.
+T [S_FORTUNE_YOU] will have domestic happiness and faithful friends.
+T [S_FORTUNE_YOU] will have good luck and overcome many hardships.
+T [S_FORTUNE_YOU] will have long and healthy life.
+T You will hear good news from one you thought unfriendly to you.
+T [S_FORTUNE_YOU] will inherit millions of dollars.
+T [S_FORTUNE_YOU] will inherit some money or a small piece of land.
+T [S_FORTUNE_YOU] will live a long, healthy, happy life and make bags of money.
+T You will live to see your grandchildren.
+T You will lose your present job and have to become a door to door mayonnaise salesman.
+T You will meet an important person who will help you advance professionally.
+T [S_FORTUNE_YOU] will never know hunger.
+T [S_FORTUNE_YOU] will not be elected to public office this year.
+T You will obey or molten silver will be poured into your ears.
+T You will outgrow your usefulness.
+T [S_FORTUNE_YOU] will overcome the attacks of jealous associates.
+T [S_FORTUNE_YOU] will pass away very quickly.
+T [S_FORTUNE_YOU] will pioneer the first Martian colony.
+T [S_FORTUNE_YOU] will probably marry after a very brief courtship.
+T You will reach the highest possible point in your business or profession.
+T You will receive a legacy which will place you above want.
+T You will remember something that you should not have forgotten.
+T [S_FORTUNE_YOU] will soon forget this.
+T [S_FORTUNE_YOU] will step on the night soil of many countries.
+T [S_FORTUNE_YOU] will visit the Dung Pits of Glive soon.
+T You will win success in whatever calling you adopt.
+T You work very hard.  Don't try to think as well.
+T You worry too much about your job.  Stop it.  You are not paid enough to worry.
+T [S_FORTUNE_YOUD] like to do it instantaneously, but that's too slow.
+T [S_FORTUNE_YOULL] be called to a post requiring ability in handling groups of people.
+T [S_FORTUNE_YOULL] feel devilish tonight.  Toss dynamite caps under a flamenco dancer's heel.
+T You'll never be the man your mother was!
+T [S_FORTUNE_YOULL] never see all the places, or read all the books, but fortunately, they're not all recommended.
+T [S_FORTUNE_YOR] a card which will have to be dealt with.
+T You're almost as happy as you think you are.
+T [S_FORTUNE_YOR] at the end of the road again.
+T You're being followed.  Cut out the hanky-panky for a few days.
+T [S_FORTUNE_YOR] currently going through a difficult transition period called "Life."
+T [S_FORTUNE_YOR] definitely on their list.  The question to ask next is what list it is.
+T You're growing out of some of your problems, but there are others that you're growing into.
+T You're not my type.  For that matter, you're not even my species!!!
+T [S_FORTUNE_YOR] working under a slight handicap.  You happen to be human.
+T You've been leading a dog's life.  Stay off the furniture.
+T [S_FORTUNE_YOUR] aim is high and to the right.
+T Your analyst has you mixed up with another patient.  Don't believe a thing he tells you.
+T [S_FORTUNE_YOUR] boss climbed the corporate ladder, wrong by wrong.
+T [S_FORTUNE_YOUR] boss is a few sandwiches short of a picnic.
+T [S_FORTUNE_YOUR] boyfriend takes chocolate from strangers.
+T [S_FORTUNE_YOUR] business will assume vast proportions.
+T [S_FORTUNE_YOUR] business will go through a period of considerable expansion.
+T [S_FORTUNE_YOUR] domestic life may be harmonious.
+T [S_FORTUNE_YOUR] fly might be open (but don't check it just now).
+T Your heart is pure, and your mind clear, and your soul devout.
+T Your life would be very empty if you had nothing to regret.
+T [S_FORTUNE_YOUR] love life will be happy and harmonious.
+T [S_FORTUNE_YOUR] love life will be... interesting.
+T Your lover will never wish to leave you.
+T [S_FORTUNE_YOUR] lucky color has faded.
+T [S_FORTUNE_YOUR] lucky number has been disconnected.
+T [S_FORTUNE_YOUR] lucky number is 3552664958674928.  Watch for it everywhere.
+T [S_FORTUNE_YOUR] mode of life will be changed for the better because of good news soon.
+T [S_FORTUNE_YOUR] mode of life will be changed for the better because of new developments.
+T Your motives for doing whatever good deed you may have in mind will be misinterpreted by somebody.
+T Your nature demands love and your happiness depends on it.
+T [S_FORTUNE_YOUR] object is to save the world, while still leading a pleasant life.
+T Your own qualities will help prevent your advancement in the world.
+T [S_FORTUNE_YOUR] sister swims out to meet troop ships.
+T Your society will be sought by people of taste and refinement.
+T Your step will soil many countries.
+T [S_FORTUNE_YOUR] supervisor is thinking about you.
+T [S_FORTUNE_YOUR] temporary financial embarrassment will be relieved in a surprising manner.
+T Your true value depends entirely on what you are compared with.
+
+[T_FORTUNES_PL_MOVE]
+T Are you making all this up as you go along? get used to it.
+T Blow it out your ear.
+T Do not overtax your powers.
+T Don't get to bragging.
+T Don't plan any hasty moves.  You'll be evicted soon anyway.
+T It's lucky you're going so slowly, because you're going in the wrong direction.
+T Obviously the only rational solution to your problem is suicide.
+T How unusual!
+T Stay the curse.
+T That secret you've been guarding, isn't.
+T You are taking yourself far too seriously.
+T You have taken yourself too seriously.
+T You need more time; and you probably always will.
+T You plan things that you do not even attempt because of your extreme caution.
+T You will get what you deserve.
+T You will wish you hadn't.
+T You'll feel much better once you've given up hope.
+T your ignorance cramps my conversation.
+T Beware the one behind you.
+T Cheer Up!  Things are getting worse at a slower rate.
+T Courage is your greatest present need.
+T Do nothing unless you must, and when you must act -- hesitate.
+T Don't let your mind wander -- it's too little to be let out alone.
+T Don't look now, but the man in the moon is laughing at you.
+T Don't relax!  It's only your tension that's holding you together.
+T Everything that you know is wrong, but you can be straightened out.
+T Expect the worst, it's the least you can do.
+T Give your very best today.  Heaven knows it's little enough.
+T It may or may not be worthwhile, but it still has to be done.
+T Learn to pause -- or nothing worthwhile can catch up to you.
+T Look afar and see the end from the beginning.
+T Many changes of mind and mood; do not hesitate too long.
+T Never be led astray onto the path of virtue.
+T Never commit yourself!  Let someone else commit you.
+T Try to relax and enjoy the crisis.
+T You attempt things that you do not even plan because of your extreme stupidity.
+T You don't become a failure until you're satisfied with being one.
+T You single-handedly fought your way into this hopeless mess.
+T You will be aided greatly by a person whom you thought to be unimportant.
+T You will pay for your sins.  If you have already paid, please disregard this message.
+T You will stop at nothing to reach your objective, but only because your brakes are defective.
+T You will triumph over your enemy.
+T You would if you could but you can't so you won't.
+T You'll wish that you had done some of the hard things when they were easier to do.
+T Your aims are high, and you are capable of much.
+T Your best consolation is the hope that the things you failed to get weren't really worth having.
+T Your depth of comprehension may tend to make you lax in worldly ways.
+T Your reasoning is excellent -- it's only your basic assumptions that are wrong.
+T Your reasoning powers are good, and you are a fairly good planner.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;;
+;;; jokes
+;;;
+;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[T_JOKES]
+T What do you call a sheep with no legs?
++ A cloud.
+
+T How do you know if your a red neck?
++ You go to the family reunon to find a date!
+
+T Yo mamma so stupid, she tried to commit suicide by
++ jumping out her basement window.
+
+T Yo mamma so fat, every time she turns around its her b-day!!!
+
+T Yo mamma is so fat: 
++ We're in her right now.
+
+T Yo mamma is so fat:
++ She eats Wheat Thicks.
+
+T How do you make a blonde's eyes sparkle?
++ Shine a torch into her ear... 
+
+T Yo mama's so fat she had her ears pierced by harpoon.
+
+T Yo mama's so fat she needs a hula hoop to keep up her socks. 
+
+T I have a great diet. You are allowed to eat anything
++ you want -- but you must eat it with naked fat people.
+
+T How can you tell if a redneck is married?
++ There is tobacco spit stains on BOTH sides of his pickup truck.
+
+T Why are guys like lava lamps?
++ They're fun to watch, but not very bright!
+
+T I am desperately trying to figure out why Kamikaze pilots wore helmets.
+
+T If it weren't for electricity we would all be watching television by candlelight.
+
+T I am not a vegetarian because I love animals.
++ I am a vegetarian because I hate plants.
+
+T *Q.* What's the difference between a chess player and
++ a highway construction worker?
++ *A.* A chess player moves every now and then. 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;;
+;;; Misc. Chatter
+;;;
+;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;;
+;;; PREDEFINED GROUPS
+;;;
+;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; DIRECT TEXT GROUPS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@START_HELP]
+T Welcome to Hotbabe Chess!
++ Click on the *MENU* button to begin,
++ or click <here|START_MENU> to start.
+
+
+[@REQUEST_HINT]
+T Hmmmm. Let me think about this for a second..
+T You need my help? Okay, just a second.
+T You want a hint, you don't deserve it. wait lemme [S_THINK]
+T wanna hint? hahahah you're hurting dude.
+T [S_JUST_A_SEC], you'll get my hint?
+T ask and you shall recieve. [S_CHAT_LAUGH].
+T you don't deserve no stinking hint.. Okay, [S_JUST_A_SEC]...
+
+
+[@ISSUE_HINT]
+T If I were you, I would lose some weight, [S_CHAT_LAUGH]..
++ seriously I would play <$hint|HINT_MOVE>.
+T Well, after much consideration, I would play <$hint|HINT_MOVE>.
+T Hmmmm, your best move is probably <$hint|HINT_MOVE>.
+T This one time at band camp, I tried <$hint|HINT_MOVE>, and
++ it worked for me.
+T Nobody every got fired for playing, <$hint|HINT_MOVE>.
+T Give <$hint|HINT_MOVE> a try.
+T Hey $player, try <$hint|HINT_MOVE>, hint hint,
++ nudge, nudge, wink, wink.
+T Now's a [S_GOOD] time for <$hint|HINT_MOVE>.
+T You should [S_DUMB_MOVE]
++ [S_CHAT_LAUGH]. Naw do this, <$hint|HINT_MOVE>.
+T Here's a hint: <$hint|HINT_MOVE>.
+T Here's a hint: [S_GET_RID_OF] [S_BAD_THING], [S_CHAT_LAUGH].
++ I joke I joke, play this <$hint|HINT_MOVE>.
+
+
+[@ABOUT]
+T Hotbabe Chess, Version 1.2
++ (c) 2004, By *Ken Stauffer*
++ <ken@stauffercom.com|MAIL_TO>.
+
+
+[@SAVE_GAME]
+T *$filename*
++ Save successful.
+
+
+[@SAVE_ERROR]
+T *Unable to save game because:*
++ $msg
+
+
+[@LOAD_GAME]
+T *$filename*
++ New game loaded.
+
+
+[@LOAD_ERROR]
+T *Unable to load game because:*
++ $msg
+
+
+[@RESIGN_CONFIRMATION]
+T Are you sure you want to resign? <Yes|RESIGN_GAME>.
+T Had too much? You really want to resign? <Yes|RESIGN_GAME>.
+T This game has been [S_FUN], [S_CHAT_LAUGH]. Wanna resign? <Yes|RESIGN_GAME>.
+T I guess I'll let you resign. Are you sure? <Yes|RESIGN_GAME>.
+T Click <here|RESIGN_GAME> if you are sure you want to resign.
+T You wanna resign already? Are you sure? <Yes|RESIGN_GAME>.
+T What you talkin 'bout, Willis? Resign really? <Yes|RESIGN_GAME>.
+T go ahead, make my day.. resign really? <Yes|RESIGN_GAME>.
+T you wanna to resign? <Yes|RESIGN_GAME>.
+T can't finish what you started? <Yes|RESIGN_GAME>.
+
+
+[@STATISTICS]
+T *STATISTICS:*
++ Skill level: *$skill*
++ Average: *$nps* nodes/second. Last: *$last_nps* nps.
++ *$last_nc* chess positions searched last time.
++ *$slots* out *$tslots* hash slots in use.
++ *$lookup* hash lookups, *$collision* hash collisions.
++ Principle Continuation: *$bs*
+
+
+[@CHANGE_NICKNAME]
+T *$old* will be known as *$new*
+T Nickname *$old* changed to *$new*
+T *$old* has changed nickname to *$new*
+T *$old* has been changed to *$new*
+T *'$old'* changed to *'$new'*
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; Help messages
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[@HELP]
+T *HELP TOPICS:*
++   <New game|HELP1>, <Save/Load Game|HELP2>, <Exit game|HELP21>, <Hint|HELP3>,
++   <Undo|HELP4>, <Flip Board|HELP5>, <Resign|HELP6>, <Change Nickname|HELP7>,
++   <Statistics|HELP8>, <Webcam on/off|HELP9>, <Game History List|HELP10>,
++   <Moving Chess Pieces|HELP15>.
++   See also: <more help topics|HELP19>.
+
+[@HELP1]
+T *NEW GAME:*
++   Select the the side you wish to play.
++   You can be *white* pieces or *black* pieces. *White*
++   always moves first. See also: <Skill Level|HELP14>.
++ <BACK|HELP>.
+
+[@HELP2]
+T *SAVE/LOAD GAME:*
++   <Save Game|HELP12> to save your current game.
++   <Load Game|HELP13> to load a saved game.
++ <BACK|HELP>.
+
+[@HELP3]
+T *HINT:*
++   When it is your turn to move, select *hint* from
++   the command menu. *Hotbabe* will recommend a good move
++   to make. You can make the move by clicking on
++   the move in the chat window. <BACK|HELP>.
+
+[@HELP4]
+T *UNDO:*
++   This command will take back your last move (plus
++   *hotbabe*'s last move). You can undo a move even
++   if the game has finished. You can use *Undo*
++   to take back as many moves as you want. <BACK|HELP>.
+
+[@HELP5]
+T *FLIP CHESS BOARD:*
++   There's a *dohickey* to the right of the chess board that,
++   when clicked, will flip the board. This is allows you to switch
++   perspective. It won't have any other effect on game play.
++ <BACK|HELP>.
+
+[@HELP6]
+T *RESIGN:*
++   Resign will end the current game. You must resign
++   a game before starting a *new* game. *Hotbabe*
++   will ask you if you are really sure you want
++   to resign. <BACK|HELP>.
+
+[@HELP7]
+T *CHANGE NICKNAME:*
++   Your nickname can be up to 8 characters long.
++   This is how hotbabe will refer to you. Your nickname
++   is also displayed during a game so you know when it
++   is your turn. <BACK|HELP>.
+
+[@HELP8]
+T *STATISTICS:*
++   This is techno-babble, that displays information
++   about how hotbabe's chess brain is working. The
++   most important number is *nodes per second*. The
++   faster your computer, the higher *nodes/second*.
++ <BACK|HELP>.
+
+[@HELP9]
+T *WEBCAM ON/OFF SWITCH:*
++   If you don't want to see hotbabe's webcam
++   then you can turn it off. Use the *camcorder button*
++   located on the top-right of the webcam. Hotbabe
++   will still chat with you, however. <BACK|HELP>.
+
+[@HELP10]
+T *GAME HISTORY LIST:*
++   On the upper-right is a large list box that displays all the
++   moves for the current game. The <srcoll bar|HELP11> below
++   the history list will allow you to view the chess board
++   from previous moves.
++ <BACK|HELP>.
+
+[@HELP11]
+T *HISTORY SCROLL BAR:*
++   Dragging the scroll bar updates the chess board
++   to reflect the state of the board from past moves
++   You cannot move chess pieces when you are viewing a
++   move from the history list.
++ <BACK|HELP10>.
+
+[@HELP12]
+T *SAVE GAME:*
++   Saves the current game to a *.txt* file.
++ <BACK|HELP2>.
+
+[@HELP13]
+T *LOAD GAME:*
++   Find the *.txt* file to load. This will
++   change your nickname and skill level stored with
++   the game file. You can continue playing, or
++   browse the move history. <BACK|HELP2>.
+
+[@HELP14]
+T *SKILL LEVEL:*
++   There are 20 skill levels, to control *hotbabe*'s intellegence:
++   *Search Depth*: How many moves she will look ahead.
++   *Search time*: How long hotbabe will think before moving.
++   *Queiscent Search*: Look for dangerous captures.
++ <BACK|HELP1>.
+
+[@HELP15]
+T *MOVING CHESS PIECES:*
++   When it is your turn to move, drag a chess piece using
++   your mouse. A yellow cursor will appear to indicate that
++   you may move a piece, and it will also highlight valid
++   squares in which the piece may be moved to.
++   *Special Moves:* <Castling|HELP16>, <Pawn Promotion|HELP17>, <e.p. Capture|HELP18>.
++ <BACK|HELP>.
+
+[@HELP16]
+T *CASTLING:*
++   To perform a castling move, move the king to its final square.
++   *queen-side castle:* Move king to square *C1*
++   *king-side castle:* Move king to square *G1*
++   The *rook* will automatically be moved for you.
++ <BACK|HELP15>.
+
+[@HELP17]
+T *PAWN PROMOTION:*
++   When a pawn reaches the opposite side of the board,
++   it can be promoted to a *queen*, *rook*, *bishop*, or *knight*.
++   A pop-up window will ask you to select what piece to promote
++   your pawn to.
++ <BACK|HELP15>.
+
+[@HELP18]
+T *E.P. CAPTURE:*
++   Move your pawn diagonally to capture the opponents pawn
++   that has moved two squares.
++ <BACK|HELP15>.
+
+[@HELP19]
+T *MORE HELP TOPICS:*
++   <side-to-move indicator|HELP20>, <last game file|HELP22>,
++   <hotbabe video file|HELP23>, <Happy Halloween|EE>,
++   <changing mature rating|HELP24>, <Game Over Situations|HELP25>.
++ <BACK|HELP>.
+
+[@HELP20]
+T *SIDE TO MOVE INDICATOR:*
++   A large *red arrow* appears next to the nickname
++   of the player that is currently moving.
++ <BACK|HELP19>.
+
+[@HELP21]
+T *EXIT HOTBABE CHESS:*
++   To exit the application click on the *close* button
++   on the top-right of the window. Any game in progress
++   will be saved, and automatically loaded next time
++   you play chess.
++ <BACK|HELP>.
+
+[@HELP22]
+T *LAST GAME FILE: "LASTGAME.TXT"*
++   When you exit Hotbabe Chess, the current game is
++   saved to the file *lastgame.txt* in the installation
++   directory. It will automatically be loaded next
++   time you run Hotbabe Chess.
++ <BACK|HELP19>.
+
+[@HELP23]
+T *HOTBABE VIDEO FILE:*
++   The *hotbabe_chess.avi* file is encoded using the IR32 codec.
++   This is an old Indeo version 3.2 codec for video compression.
++   If the video cannot play, you may need to install this codec.
++   Check the internet for a free IR32 codec driver.
++ <BACK|HELP19>.
+
+[@HELP24]
+T *CHANGING MATURE RATING:*
++   *Hotbabe Chess* can be configured for
++   a MATURE/GENERAL audience. To change the program
++   rating, edit the *hotbabe_chess.dat* file (located
++   in the program installation directory).
++   <BACK|HELP19>.
+
+[@HELP25]
+T *GAME OVER SITUATIONS:*
++    *Check-mate*: Hotbabe, or $player wins.
++    *Stale-mate*: Nobody wins, player to move cannot
++    make any valid moves, but is not in check.
++    *Draw*: Too much repetion of the same sequence of moves.
++    *Resigned*: Player resigned. Hotbabe wins!
++   <BACK|HELP19>.
+
+[@EE]
+G EE_CLIPS
+T Boo!
++ ~
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; HOTBABE GENERAL BEHAVIOR
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; text groups for hotbabe behavior
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[T_SPEC_MESSAGE]
+G SAY_NOTHING
+
+[T_SPEC_COFFEE]
+T This will wake me up
+T java sucks too
+T decafe is for ned flanders
+T coffee time
+T i need something to wake me up.
+T they call me, Mr. Coffee
+
+[T_SPEC_BEER]
+T Mmmm. Beer
+T duff time
+
+[T_SPEC_WHISKEY]
+T This will wake me up, better than coffee
+T JD time
+T shot time
+
+[T_SPEC_WINE]
+T whiner
+T I'll have some cheese with my whine
+T 1845 was a crappy year
+T this was a very good year
+t wine makes me horny
+T To domestic happiness and faithful friends.
+T To chess tonight.
+T To a few hours grace before the madness begins again.
+T To advancement in position.
+T A toast to friends.
+
+[T_SPEC_MARTINI]
+T shaken not stirred, please
+T this is a Bond - James Bond drink, lol
+
+[T_SPEC_PHONE]
+T [S_JUST_A_SEC]... my [S_CALLER] is calling me
+T No, I don't want to save money on long distance
+T yes, i am happy with my dsl provider
+T can you hear me now?
+
+[T_SPEC_SOUP]
+T Gag me with a spoon
+T [S_YUMMY]. [S_SOUP_ADJ] [S_ANIMAL] [S_ANIMAL_PART]
+
+[T_SPEC_BOOK]
+T Reading make me smart
+T time to read *Chess for Dummies*
+T Hmmm... how to win at chess, chapter 69
+T lets see what my chess bible says
+
+[T_SPEC_IGOR]
+T This is my brain on drugs
+T wanna see my pieces?
+T Chess tonight.
+
+[T_SPEC_SICK]
+T Damn this cold!
+T I think I have SARS
+T my ebola is acting up again
+
+[T_SPEC_SMOKING]
+T Cough, cough
+T do you smoke, $player?
+T i smoke? does it bother you?
+T puff, puff
+
+[T_SPEC_HAIR]
+T I am a natural redhead
+T my hair color matches the webcam border
+
+[T_SPEC_MAKEUP]
+T Beauty is skin deep
+T Do you wear makeup?
+
+[T_SPEC_BONG]
+T this will give me a few more plies
+T this will help me [S_THINK]
+G T_FORTUNES_SPECIAL
+G T_FORTUNES_GENERAL
+
+[T_SPEC_PIPE]
+T This give me few plies more, I thinks
+T this will help me [S_THINK]
+
+[T_SPEC_PALM]
+T Let me add *$player* to my address book
+T Lemme check who i'm dating tonight
+
+[T_SPEC_DISC]
+T I'm a little bit country.
+T I'm a little bit rap-n-roll
+T what's the diff between rap and hip-hop?
+T Time to hear, [S_CD_NAME]
+T Time to play some, [S_CD_NAME]
+T want to hear some, [S_CD_NAME]?
+
+[T_SPEC_APPLE]
+T Chomp, chomp
+T Sweet apple
+
+[T_SPEC_BANANA]
+T Suck this
+T i'm going ape
+T Mmmmm. potassium rich foods
+
+[T_SPEC_CANDY]
+T munchies, I have
+T It's okay, I had Subway for lunch
+T this contains [S_INGREDIENT_ADJ] [S_ANIMAL] [S_ANIMAL_PART].
+T chocolate bars have lots of [S_INGREDIENT_ADJ] [S_ANIMAL] [S_ANIMAL_PART].
+
+[T_SPEC_AIRFRESH]
+T What smells?
+T Reek
+T this game stinks
+T something foul, i smell
+
+[T_SPEC_PS2]
+T I'm playing [S_VIDEO_GAME] with another [S_USER].
+T [S_VIDEO_GAME] time.
+
+[T_SPEC_BILLS]
+T My [S_FRIEND] just sent me a postcard from japan
+T my [S_MAIL] arrived!! [S_YIPPY]!
+T where's my dear john letter?
+T I wonder if my [S_MAIL] is here?
+T Do you want to pay my bills? (i'll let you win)
+
+[T_SPEC_MISC]
+G SAY_NOTHING
+
+[T_HB_WIN1]
+T I am beating you a little
+T were almost even, except I think I am slightly ahead
+T I'm winning, just barely.
+T well well, i'm playing well today
+T I'm ahead
+G T_FORTUNES_PL_MOVE
+
+[T_HB_WIN2]
+T I am killing you
+T You're in trouble, $player
+T I'm winning
+T you're such a loser, $player!
+G T_FORTUNES_PL_MOVE
+
+[T_PL_WIN1]
+T You're winning
+T I'm [S_FUCKED]
+T I'm losing
+T I'm such a loser
+T $player, you're not as dumb as you look
+T you're ahead
+T you're beating me
+T you're playing well
+G T_FORTUNES_PL_MOVE
+
+[T_PL_WIN2]
+T Ouch! You are killing me :-(
+T I'm [S_FUCKED] now.
+T I'm *[S_FUCKED]*!!!
+T $player, you are a [S_GOOD] chess competitor
+T this is the last time I play you.
+T I should just resign now.
+T you're playing really well
+
+[T_GEN_TYPING]
+t Fork you
+T This is just mindless chatter...
+t My home page is <http://www.stauffercom.com/hotbabe>.
+T I [S_LIKE] to play chess
+T chess is [S_FUN]
+T My chess rating is 2200..
+T I play chess when I'm bored
+T my grandfather uses the nickname Hot-Abe
+T I have 3 C programs
+T i know what you did last summer
+T nerd
+T geek
+T bloke!
+T it's [S_GOOD] to be alive!
+G T_HEADLINES
+G T_FORTUNES_GENERAL
+G T_FORTUNES_SPECIAL
+
+[T_GEN_STILL]
+G SAY_NOTHING
+
+[T_GEN_MISC]
+G SAY_NOTHING
+
+[T_GEN_BORED]
+T chess is [S_BORING]
+T i'm getting [S_BORED]..
+T snore, [S_CHAT_LAUGH].
+T move already!
+T move please!
+G T_HEADLINES
+G T_FORTUNES_GENERAL
+G T_FORTUNES_SPECIAL
+G T_JOKES
+
+[T_GEN_AGREE]
+T i agree
+T yeah, whatever
+G T_HEADLINES
+G T_FORTUNES_SPECIAL
+G T_FORTUNES_GENERAL
+G T_JOKES
+
+[T_GEN_DISAGREE]
+T i disagree
+T nope
+G T_FORTUNES_GENERAL
+G T_FORTUNES_SPECIAL
+
+[T_GEN_HAND_FINGER]
+T Guck you.
+
+[T_GEN_HAND_SCREW_YOU]
+T Screw you.
+
+[T_GEN_HAND_THUMBS_UP]
+T I'll let you live
+
+[T_GEN_HAND_THUMBS_DOWN]
+T die.
+T your [S_NO_GOOD] at chess
+T your chess skills are [S_NO_GOOD]
+T so very [S_NO_GOOD]
+
+[T_GEN_HAND_CLAP]
+T Congratulations!!!!
+T I [S_LIKE] this game
+G T_FORTUNES_SPECIAL
+
+[T_GEN_HAND_WAVE]
+T Hi
+T Hello
+T Howdeeee
+T What's new?
+T Can you see my [S_WEBCAM]?
+T Can you see me now?
+G T_FORTUNES_GENERAL
+G T_FORTUNES_SPECIAL
+
+[T_GEN_HAND_CRAZY]
+T I'm going [S_CRAZY]
+T You're [S_WIERD]
+T how [S_WIERD].
+G T_HEADLINES
+
+[T_GEN_HAND_PEACE]
+T Peace, [S_DUDE]
+T Relax, be peaceful
+T my parents were hippies, now they're hippos
+
+[T_GEN_HAND_GAGGING]
+T Barf
+T this game [S_SUCKS]
+
+[T_GEN_HAND_CUT_THROAT]
+T It's over for you.
+T its all over
+
+[T_GEN_HAND_FUCK_SIGN]
+T Wanna?
+T when was the last time for you?
+T did you get any last night?
+
+[T_GEN_HAND_POINT]
+T Hahahaha
+T You're a dork.
+T You make me laugh
+T you're going to lose
+G T_HEADLINES
+G T_FORTUNES_SPECIAL
+G T_FORTUNES_GENERAL
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; Behavior sub-groups
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[B_SPEC_MESSAGE]
+G MESSAGE_CLIPS
+G T_SPEC_MESSAGE
+G SAY_NOTHING
+
+[B_SPEC_COFFEE]
+G COFFEE_CLIPS
+G T_SPEC_COFFEE
+G SAY_NOTHING
+
+[B_SPEC_BEER]
+G BEER_CLIPS
+G T_SPEC_BEER
+G SAY_NOTHING
+
+[B_SPEC_WHISKEY]
+G WHISKEY_CLIPS
+G T_SPEC_WHISKEY
+G SAY_NOTHING
+
+[B_SPEC_WINE]
+G WINE_CLIPS
+G T_SPEC_WINE
+G SAY_NOTHING
+
+[B_SPEC_MARTINI]
+G MARTINI_CLIPS
+G T_SPEC_MARTINI
+G SAY_NOTHING
+
+[B_SPEC_PHONE]
+G PHONE_CLIPS
+G T_SPEC_PHONE
+G SAY_NOTHING
+
+[B_SPEC_SOUP]
+G SOUP_CLIPS
+G T_SPEC_SOUP
+G SAY_NOTHING
+
+[B_SPEC_BOOK]
+G BOOK_CLIPS
+G T_SPEC_BOOK
+G SAY_NOTHING
+
+[B_SPEC_IGOR]
+G CHESS_BOARD_CLIPS
+G CHESS_PIECE_CLIPS
+G T_SPEC_IGOR
+G SAY_NOTHING
+
+[B_SPEC_SICK]
+G SICK_CLIPS
+G T_SPEC_SICK
+G SAY_NOTHING
+G SAY_NOTHING
+
+[B_SPEC_TISSUE]
+G TISSUE_CLIPS
+G SAY_NOTHING
+G SAY_NOTHING
+
+[B_SPEC_SMOKING]
+G SMOKING_CLIPS
+G T_SPEC_SMOKING
+G SAY_NOTHING
+G SAY_NOTHING
+
+[B_SPEC_HAIR]
+G HAIR_CLIPS
+G T_SPEC_HAIR
+G SAY_NOTHING
+G SAY_NOTHING
+
+[B_SPEC_MAKEUP]
+G MAKEUP_CLIPS
+G T_SPEC_MAKEUP
+G SAY_NOTHING
+G SAY_NOTHING
+
+[B_SPEC_BONG]
+G BONG_CLIPS
+G T_SPEC_BONG
+G SAY_NOTHING
+G SAY_NOTHING
+
+[B_SPEC_PIPE]
+G PIPE_CLIPS
+G T_SPEC_PIPE
+G SAY_NOTHING
+G SAY_NOTHING
+
+[B_SPEC_PALM]
+G PALM_PILOT_CLIPS
+G T_SPEC_PALM
+G SAY_NOTHING
+G SAY_NOTHING
+
+[B_SPEC_DISC]
+G DISC_MAN_CLIPS
+G T_SPEC_DISC
+G SAY_NOTHING
+G SAY_NOTHING
+
+[B_SPEC_APPLE]
+G APPLE_CLIPS
+G T_SPEC_APPLE
+G SAY_NOTHING
+G SAY_NOTHING
+
+[B_SPEC_BANANA]
+G BANANA_CLIPS
+G T_SPEC_BANANA
+G SAY_NOTHING
+G SAY_NOTHING
+
+[B_SPEC_CANDY]
+G CANDY_CLIPS
+G T_SPEC_CANDY
+G SAY_NOTHING
+G SAY_NOTHING
+
+[B_SPEC_AIRFRESH]
+G AIR_FRESH_CLIPS
+G T_SPEC_AIRFRESH
+G SAY_NOTHING
+G SAY_NOTHING
+
+[B_SPEC_PS2]
+G PLAY_STATION_CLIPS
+G T_SPEC_PS2
+G SAY_NOTHING
+G SAY_NOTHING
+
+[B_SPEC_BILLS]
+G BILLS_CLIPS
+G T_SPEC_BILLS
+G SAY_NOTHING
+G SAY_NOTHING
+
+[B_SPEC_MISC]
+G MISC_CLIPS
+G T_SPEC_MISC
+G SAY_NOTHING
+G SAY_NOTHING
+
+[B_GEN_TYPING]
+G SHORT_TYPING_CLIPS
+G SAY_NOTHING
+G SAY_NOTHING
+G SAY_NOTHING
+G SAY_NOTHING
+G SAY_NOTHING
+G SAY_NOTHING
+G SAY_NOTHING
+G T_GEN_TYPING
+
+[B_GEN_STILL]
+G STILL_CLIPS
+G SAY_NOTHING
+G SAY_NOTHING
+G SAY_NOTHING
+G SAY_NOTHING
+G SAY_NOTHING
+G SAY_NOTHING
+G SAY_NOTHING
+G SAY_NOTHING
+G T_GEN_STILL
+
+[B_GEN_BORED]
+G BORED_CLIPS
+G SAY_NOTHING
+G SAY_NOTHING
+G SAY_NOTHING
+G SAY_NOTHING
+G SAY_NOTHING
+G SAY_NOTHING
+G T_GEN_BORED
+
+[B_GEN_AGREE]
+G AGREE_CLIPS
+G SAY_NOTHING
+G SAY_NOTHING
+G SAY_NOTHING
+G SAY_NOTHING
+G SAY_NOTHING
+G SAY_NOTHING
+G T_GEN_AGREE
+
+[B_GEN_DISAGREE]
+G DISAGREE_CLIPS
+G SAY_NOTHING
+G SAY_NOTHING
+G SAY_NOTHING
+G SAY_NOTHING
+G SAY_NOTHING
+G SAY_NOTHING
+G SAY_NOTHING
+G T_GEN_DISAGREE
+
+[B_GEN_HAND_FINGER]
+G FINGER_CLIPS
+G T_GEN_HAND_FINGER
+G SAY_NOTHING
+
+[B_GEN_HAND_SCREW_YOU]
+G SCREW_YOU_CLIPS
+G T_GEN_HAND_SCREW_YOU
+G SAY_NOTHING
+
+[B_GEN_HAND_THUMBS_UP]
+G THUMBS_UP_CLIPS
+G T_GEN_HAND_THUMBS_UP
+G SAY_NOTHING
+
+[B_GEN_HAND_THUMBS_DOWN]
+G THUMBS_DOWN_CLIPS
+G T_GEN_HAND_THUMBS_DOWN
+G SAY_NOTHING
+
+[B_GEN_HAND_CLAP]
+G CLAP_CLIPS
+G T_GEN_HAND_CLAP
+G SAY_NOTHING
+
+[B_GEN_HAND_WAVE]
+G WAVE_CLIPS
+G T_GEN_HAND_WAVE
+G SAY_NOTHING
+
+[B_GEN_HAND_CRAZY]
+G CRAZY_CLIPS
+G T_GEN_HAND_CRAZY
+G SAY_NOTHING
+
+[B_GEN_HAND_PEACE]
+G PEACE_CLIPS
+G T_GEN_HAND_PEACE
+G SAY_NOTHING
+
+[B_GEN_HAND_GAGGING]
+G GAGGING_CLIPS
+G T_GEN_HAND_GAGGING
+G SAY_NOTHING
+
+[B_GEN_HAND_CUT_THROAT]
+G CUT_THROAT_CLIPS
+G T_GEN_HAND_CUT_THROAT
+G SAY_NOTHING
+
+[B_GEN_HAND_FUCK_SIGN]
+G FUCK_SIGN_CLIPS
+G T_GEN_HAND_FUCK_SIGN
+G SAY_NOTHING
+
+[B_GEN_HAND_POINT]
+G POINT_FINGER_CLIPS
+G T_GEN_HAND_POINT
+G SAY_NOTHING
+
+[B_GEN_HAND]
+G B_GEN_HAND_FINGER
+G B_GEN_HAND_SCREW_YOU
+G B_GEN_HAND_CUT_THROAT
+G B_GEN_HAND_FUCK_SIGN
+G B_GEN_HAND_THUMBS_UP
+G B_GEN_HAND_THUMBS_DOWN
+G B_GEN_HAND_CLAP
+G B_GEN_HAND_WAVE
+G B_GEN_HAND_CRAZY
+G B_GEN_HAND_PEACE
+G B_GEN_HAND_GAGGING
+G B_GEN_HAND_POINT
+
+[B_GEN_MISC]
+G GENERAL_CLIPS
+G POTENTIAL_CLIPS
+G SAY_NOTHING
+G SAY_NOTHING
+G SAY_NOTHING
+G SAY_NOTHING
+G SAY_NOTHING
+G SAY_NOTHING
+G SAY_NOTHING
+G SAY_NOTHING
+G T_GEN_MISC
+
+[B_SPEC]
+G B_SPEC_MESSAGE
+G B_SPEC_COFFEE
+G B_SPEC_BEER
+G B_SPEC_WHISKEY
+G B_SPEC_WINE
+G B_SPEC_MARTINI
+G B_SPEC_PHONE
+G B_SPEC_SOUP
+G B_SPEC_BOOK
+G B_SPEC_IGOR
+G B_SPEC_TISSUE
+G B_SPEC_SMOKING
+G B_SPEC_HAIR
+G B_SPEC_MAKEUP
+G B_SPEC_BONG
+G B_SPEC_PIPE
+G B_SPEC_PALM
+G B_SPEC_DISC
+G B_SPEC_APPLE
+G B_SPEC_BANANA
+G B_SPEC_CANDY
+G B_SPEC_AIRFRESH
+G B_SPEC_PS2
+G B_SPEC_BILLS
+G B_SPEC_MISC
+
+[B_GEN]
+G B_GEN_TYPING
+G B_GEN_TYPING
+G B_GEN_TYPING
+G B_GEN_STILL
+G B_GEN_STILL
+G B_GEN_STILL
+G B_GEN_MISC
+G B_GEN_MISC
+G B_GEN_MISC
+G B_GEN_BORED
+G B_GEN_AGREE
+G B_GEN_DISAGREE
+G B_GEN_HAND
+
+[B_GENERAL]
+G B_GEN
+G B_GEN
+G B_GEN
+G B_GEN
+G B_SPEC
+
+[B_HB_WIN1]
+G HOTBABE_WINNING1_CLIPS
+G T_HB_WIN1
+G SAY_NOTHING
+
+[B_HB_WIN2]
+G HOTBABE_WINNING2_CLIPS
+G T_HB_WIN2
+G SAY_NOTHING
+
+[B_PL_WIN1]
+G PLAYER_WINNING1_CLIPS
+G T_PL_WIN1
+G SAY_NOTHING
+
+[B_PL_WIN2]
+G PLAYER_WINNING2_CLIPS
+G T_PL_WIN2
+G SAY_NOTHING
+
+[B_THINKING]
+G THINKING_CLIPS
+T Hmmm, what should I do?
+T looks like a tough move
+T I'm [S_FUCKED]!
+T Hmmmmm...
+T It's my turn?
+T I'm going to blow your mind with this move, [S_CHAT_LAUGH]
+T i'm trying to think but nothing happens
+T when I think of chess, I touch myself
+T that's my final answer
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; Basic hotbabe behavior
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@GENERAL_BEHAVIOR]
+G B_GENERAL
+
+[@PLAYER_WINNING1]
+G B_PL_WIN1
+G B_GENERAL
+G B_GENERAL
+G B_GENERAL
+G B_GENERAL
+G B_GENERAL
+
+[@PLAYER_WINNING2]
+G B_PL_WIN2
+G B_GENERAL
+G B_GENERAL
+G B_GENERAL
+G B_GENERAL
+
+[@HOTBABE_WINNING1]
+G B_HB_WIN1
+G B_GENERAL
+G B_GENERAL
+G B_GENERAL
+G B_GENERAL
+G B_GENERAL
+
+[@HOTBABE_WINNING2]
+G B_HB_WIN2
+G B_GENERAL
+G B_GENERAL
+G B_GENERAL
+G B_GENERAL
+
+[@HOTBABE_THINKING]
+G B_GENERAL
+G B_GENERAL
+G B_THINKING
+G B_THINKING
+G B_THINKING
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; Behavior when game is over, games begins, game ends
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;
+; what to show before when no game is in progress
+;
+[@NOGAME]
+G EMPTY_CLIPS
+
+[@SITDOWN]
+G SITDOWN_CLIPS
+
+[@STANDUP]
+G STANDUP_CLIPS
+
+;;;;;;;;;;;;;;; game start ;;;;;;;;;;;;;;;;;;
+[B_GAME_START1]
+G GENERAL_CLIPS
+G WAVE_CLIPS
+G PEACE_CLIPS
+G THINKING_CLIPS
+G SHORT_TYPING_CLIPS
+T Hi! I gotta leave soon, but I have time for a quickie, [S_CHAT_LAUGH]
+T Welcome back professor Faulken. How about a game of chess?
+T Let's play chess!
+T How about a game of global thermonuclear war, instead?
+T Hi $player!! Are you a [S_GOOD] chess player?
+T Let's play a fast 1 cuz, I gotta leave soon.
+T Hi $player, I'm back
+T Howdy $player
+
+[B_GAME_START2]
+G CRAZY_CLIPS
+T I have a feeling this game is going to get crazy!
+T lets play a cookoo crazy game of chess
+
+[B_GAME_START3]
+G WAVE_CLIPS
+T Hi!!!!! Nice to meet you.
+T nice to meet you, let's play!
+T let's play with each other?
+
+[B_GAME_START4]
+G CHESS_BOARD_CLIPS
+T Want to play with me?
+T wanna play with my chess board?
+T is chess your game of choice?
+
+[B_GAME_START5]
+G AGREE_CLIPS
+T i'll play chess with you
+T sure, chess sounds like fun
+T chess? okay, I need something to do
+T play chess? sure. what the [S_HELL]...
+
+[@GAME_START]
+G B_GAME_START1
+G B_GAME_START1
+G B_GAME_START1
+G B_GAME_START2
+G B_GAME_START3
+G B_GAME_START4
+G B_GAME_START5
+
+;;;;;;;;;;;;;;; game continue ;;;;;;;;;;;;;;;;;;
+[B_GAME_CONTINUE1]
+G GENERAL_CLIPS
+T Okay, let's get this game over with already!
+T Let's finish this thing.
+T I guess we're going to continue...
+T This game just goes on and on and on and on.... arghh..
+T I'm sick of this game, already
+T $player, want to continue this game?
+
+[B_GAME_CONTINUE2]
+G WAVE_CLIPS
+T Hello again. Continue this game?
+T Hello $player. Continue this game?
+
+[B_GAME_CONTINUE3]
+G COFFEE_CLIPS
+T I need some coffee if we intend to continue this game.
+T better wake myself up before continuing
+
+[B_GAME_CONTINUE4]
+G BOOZE_CLIPS
+T arghh, this game never ends
+
+[B_GAME_CONTINUE5]
+G PALM_PILOT_CLIPS
+T Hmmm, according to my records we never finished this game.
+T Oh yes, $player. I remember you from last time
+T hmmmm, this shows you still losing...
+
+[@GAME_CONTINUE]
+G B_GAME_CONTINUE1
+G B_GAME_CONTINUE1
+G B_GAME_CONTINUE1
+G B_GAME_CONTINUE2
+G B_GAME_CONTINUE3
+G B_GAME_CONTINUE4
+G B_GAME_CONTINUE5
+
+;;;;;;;;;;;;;;; game end ;;;;;;;;;;;;;;;;;;
+[B_GAME_END1]
+G WAVE_CLIPS
+G WAVE_CLIPS
+G PEACE_CLIPS
+G CLAP_CLIPS
+G THUMBS_UP_CLIPS
+t You are such a [S_MEAN_ADJ] [S_IDIOT], [S_BYE]
+T Well, I gotta go. Thanks for the chat.
+T Goodbye. [S_GOOD] game!
+T Let's do this again
+T gotta go to work... where did I put my [S_BONDAGE_IMPLEMENT]?
+T i'll be back
+T [S_BYE], [S_BYE], [S_BYE]
+T I bid you a fond farewell
+
+[B_GAME_END2]
+G BOOZE_CLIPS
+T game over, party time
+T nice game, I need a drink now
+T wow, what a game!!!
+
+[B_GAME_END3]
+G PALM_PILOT_CLIPS
+T *$player*, i'm adding you to my list of [S_WIERD] chess players. [S_GOOD] game
+T well, yet another [S_GOOD] game
+T yet another [S_WIERD] game for the books
+
+[B_GAME_END4]
+G SMOKING_CLIPS
+G DRUG_CLIPS
+T i always have a smoke after chess :-)
+
+[B_GAME_END5]
+G PHONE_CLIPS
+T i gotta tell my [S_FRIEND] about this game
+T i'm calling you, but it seems to be busy????
+
+[@GAME_END]
+G B_GAME_END1
+G B_GAME_END1
+G B_GAME_END1
+G B_GAME_END1
+G B_GAME_END2
+G B_GAME_END3
+G B_GAME_END4
+G B_GAME_END5
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; Behavior when player does something
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;; nickname changed ;;;;;;;;;;;;;;;;;;;;;;
+[B_NICKNAME_TAUNT1]
+G GENERAL_CLIPS
+T I [S_LIKE] "$player" much much better
+T Did you pick out '$player' yourself, or did
++ your [S_FRIEND] pick it?
+T Are you a [S_AUTHORITY_FIGURE]? '$player' sounds like one??
+T My [S_MALE_FRIEND] had that nickname...  then I dumped him
+T Welcome to the game, $player.
+T will you be my friend $player?
+T In the year two thousand, all kids will
++ be named '$player'
+T Let's get real, $player
+T $player... whatever
+T is your real name [S_PROPERNAME]?
+T do you know [S_PROPERNAME]?
+
+[B_NICKNAME_TAUNT2]
+G DISAGREE_CLIPS
+T i don't like $player
+T that nick is [S_NO_GOOD]
+T i prefer *[S_PROPERNAME]*
+
+[B_NICKNAME_TAUNT3]
+G AGREE_CLIPS
+T oh, i [S_LIKE] $player
+T i [S_LIKE] your new nick
+T awsome nickname
+T oh yeah baby! *$player* is [S_GOOD]
+T I dated somebody named $player, then I dumped him for [S_PROPERNAME].
+T my ex-by called me $player in bed
+
+[B_NICKNAME_TAUNT4]
+G CRAZY_CLIPS
+T '$player' is kinda [S_WIERD]
+T what's your porno name?
+
+[B_NICKNAME_TAUNT5]
+G WAVE_CLIPS
+T hello, $player, nice to meet you.
+T hi $player
+T hello [S_PROPERNAME]! opps I mean $player
+
+[@NICKNAME_TAUNT]
+G B_NICKNAME_TAUNT1
+G B_NICKNAME_TAUNT1
+G B_NICKNAME_TAUNT1
+G B_NICKNAME_TAUNT2
+G B_NICKNAME_TAUNT3
+G B_NICKNAME_TAUNT4
+G B_NICKNAME_TAUNT5
+
+;;;;;;;;;;;;;;;;;;;;;; player considers resigning ;;;;;;;;;;;;;;;;;;;;;;
+[B_RESIGN_TAUNT1]
+G GENERAL_CLIPS
+T Go for it. I was going to win anyway.
+T you wanna leave me?
+T it's better to lose now than 20 moves from now
+T your done already?
+T come one! you can beat me...
+T don't give up.
+T don't give up, yet!
+T give up, [S_DUDE]
+
+[B_RESIGN_TAUNT2]
+G AGREE_CLIPS
+T that's what I would do, if I were you, $player
+
+[B_RESIGN_TAUNT3]
+G DISAGREE_CLIPS
+T you really, really, really sure you want to do that?
+T don't do this to me!
+
+[B_RESIGN_TAUNT4]
+G WAVE_CLIPS
+T i guess this is bye, bye
+T bye $player
+T i'll miss you
+
+[B_RESIGN_TAUNT5]
+G SMOKING_CLIPS
+T this game was a waste
+
+[@RESIGN_TAUNT]
+G B_RESIGN_TAUNT1
+G B_RESIGN_TAUNT1
+G B_RESIGN_TAUNT1
+G B_RESIGN_TAUNT1
+G B_RESIGN_TAUNT2
+G B_RESIGN_TAUNT3
+G B_RESIGN_TAUNT4
+G B_RESIGN_TAUNT5
+
+;;;;;;;;;;;;;;;;;;;;;; player turns off webcam ;;;;;;;;;;;;;;;;;;;;;;
+[@WEBCAM_OFF]
+G GENERAL_CLIPS
+T Now I can take my [S_CLOTHES] off
+T Do you think I'm [S_UGLY]?
+T am i too [S_UGLY] to watch?
+
+;;;;;;;;;;;;;;;;;;;;;; player turns on webcam ;;;;;;;;;;;;;;;;;;;;;;
+[B_WEBCAM_ON1]
+G GENERAL_CLIPS
+T How come you don't show yourself, too?
+T Lemme see your [S_WEBCAM]!
+T I'm as smart as i look
+
+[B_WEBCAM_ON2]
+G WAVE_CLIPS
+T nice to see you again.
+T here i am
+T i'm still here
+
+[B_WEBCAM_ON3]
+G AGREE_CLIPS
+T I like being a vouyer
+T I like to be watched
+
+[B_WEBCAM_ON4]
+G DISAGREE_CLIPS
+T don't look at me!
+T make up your mind
+T i would rather not be seen right now
+
+[B_WEBCAM_ON5]
+G MAKEUP_CLIPS
+T just a sec, i need to get pretty for you
+T how do I look, $player?
+
+[@WEBCAM_ON]
+G B_WEBCAM_ON1
+G B_WEBCAM_ON1
+G B_WEBCAM_ON1
+G B_WEBCAM_ON1
+G B_WEBCAM_ON2
+G B_WEBCAM_ON3
+G B_WEBCAM_ON4
+G B_WEBCAM_ON5
+
+;;;;;;;;;;;;;;;;;;;;;; player undos a move ;;;;;;;;;;;;;;;;;;;;;;
+[B_UNDO_TAUNT1]
+G GENERAL_CLIPS
+T Why undo now?
+T want to see my undowear? <yes>
+
+[B_UNDO_TAUNT2]
+G AGREE_CLIPS
+T wise decision to take back a move
+
+[B_UNDO_TAUNT3]
+G DISAGREE_CLIPS
+T why, oh why, is undo needed?
+T take back a move, now?
+T darn, i wish you hadn't done that
+
+[B_UNDO_TAUNT4]
+G BORED_CLIPS
+T we're going the wrong way in this game
+T this game will take forever
+
+[B_UNDO_TAUNT5]
+G THINKING_CLIPS
+T Hmmmm.
+T hmmm, what's the point?
+T hmmm... you're wrecking my plan to crush you
+
+[@UNDO_TAUNT]
+G B_UNDO_TAUNT1
+G B_UNDO_TAUNT1
+G B_UNDO_TAUNT1
+G B_UNDO_TAUNT1
+G B_UNDO_TAUNT2
+G B_UNDO_TAUNT3
+G B_UNDO_TAUNT4
+G B_UNDO_TAUNT5
+
+;;;;;;;;;;;;;;;;;;;;;; player flips board ;;;;;;;;;;;;;;;;;;;;;;
+[B_FLIP_BOARD1]
+G AGREE_CLIPS
+G DISAGREE_CLIPS
+G BOOZE_CLIPS
+G SMOKING_CLIPS
+G BORED_CLIPS
+T Don't flip out, [S_DUDE].
+T I'm all upside down
+T your flipping me out
+T it's a topsy-turvy world
+
+[@FLIP_BOARD]
+G B_GENERAL
+G B_FLIP_BOARD1
+
+;;;;;;;;;;;;;;;;;;;;;; About command ;;;;;;;;;;;;;;;;;;;;;;
+[@CREDITS]
+G CREDITS_CLIPS
+T blame *Ken Stauffer* for *Hotbabe Chess*.
+T i'm a semi-cyborgonic entity, trapped in this [S_NO_GOOD] game.
+T help! i'm trapped in a chinese chess game
+T it took *5 hours* to film this [S_NO_GOOD] game.
+T no drugs or alcohol were used in the making of this game
++ (unfortunately)
+T did you know *Ken Stauffer* wrote this for The Eiffel Struggle 2003 contest?
+T See my profile at <http://www.stauffercom.com/hotbabe>
+T Send me mail at <hotbabe@stauffercom.com|MAIL_TO>
+T Don't PM me!!!! but e-mail is okay, <hotbabe@stauffercom.com|MAIL_TO>
+T if you're wondering... my shirt reads *TRAILER TRASH*
+T i need to confess, $player, i have never played chess before today.
+T when asked to do this, my first thought was -- *porno*!!!
+T i was created using Eiffel, the worlds greatest programming language
+T i was written using Eiffel, the only language with class
+T this game is bug free because Eiffel uses *design by contract*
++ (whatever the [S_HELL] that means!?!?)
+T on the weekends, i teach chess to C++ programmers
+T i have never worked on a project with kevin bacon
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; Game over groups
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;; game ends with a draw ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[B_DRAW1]
+G POUT_CLIPS
+T Well that's a freak'n draw
+
+[B_DRAW2]
+G B_DRAW1
+
+[B_DRAW3]
+G B_DRAW1
+
+[B_DRAW4]
+G B_DRAW1
+
+[B_DRAW5]
+G B_DRAW1
+
+[@DRAW]
+G B_DRAW1
+G B_DRAW1
+G B_DRAW1
+G B_DRAW2
+G B_DRAW3
+G B_DRAW4
+G B_DRAW5
+
+;;;;;;;;;;;;;;;; game ends with a stale-mate ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[B_STALEMATE1]
+G POUT_CLIPS
+T This has been the 34th stale-mate of my career
+T having no moves, [S_SUCKS]
+T it [S_SUCKS] having no moves
+
+[B_STALEMATE2]
+G B_STALEMATE1
+
+[B_STALEMATE3]
+G B_STALEMATE1
+
+[B_STALEMATE4]
+G B_STALEMATE1
+
+[B_STALEMATE5]
+G B_STALEMATE1
+
+[@STALEMATE]
+G B_STALEMATE1
+G B_STALEMATE1
+G B_STALEMATE1
+G B_STALEMATE2
+G B_STALEMATE3
+G B_STALEMATE4
+G B_STALEMATE5
+
+;;;;;;;;;;;;;;;; game ends because player resigned ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[B_PLAYER_RESIGNS1]
+G WIN_CLIPS
+T Yeehaw, you decided to resign
+T thanks for your letter of resignation
+T don't feel bad, it happens all the time
+T It sucks to be you.
+
+[B_PLAYER_RESIGNS2]
+G B_PLAYER_RESIGNS1
+
+[B_PLAYER_RESIGNS3]
+G B_PLAYER_RESIGNS1
+
+[B_PLAYER_RESIGNS4]
+G B_PLAYER_RESIGNS1
+
+[B_PLAYER_RESIGNS5]
+G B_PLAYER_RESIGNS1
+
+[@PLAYER_RESIGNS]
+G B_PLAYER_RESIGNS1
+G B_PLAYER_RESIGNS1
+G B_PLAYER_RESIGNS1
+G B_PLAYER_RESIGNS2
+G B_PLAYER_RESIGNS3
+G B_PLAYER_RESIGNS4
+G B_PLAYER_RESIGNS5
+
+;;;;;;;;;;;;;;;; game ends because player won ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[B_PLAYER_WINS1]
+G LOSE_CLIPS
+T Darn. You beat me
+T Arghh.. I'm crying
+T It sucks to be me.
+T wow, I didn't think you had it in you
+T you're awsome
+T I am nothing, you are everything..
+T Wow, I lose....
+T Ouch... You beat me.
+
+[B_PLAYER_WINS2]
+G B_PLAYER_WINS1
+
+[B_PLAYER_WINS3]
+G B_PLAYER_WINS1
+
+[B_PLAYER_WINS4]
+G B_PLAYER_WINS1
+
+[B_PLAYER_WINS5]
+G B_PLAYER_WINS1
+
+[@PLAYER_WINS]
+G B_PLAYER_WINS1
+G B_PLAYER_WINS1
+G B_PLAYER_WINS1
+G B_PLAYER_WINS2
+G B_PLAYER_WINS3
+G B_PLAYER_WINS4
+G B_PLAYER_WINS5
+
+;;;;;;;;;;;;;;;; game ends because hotbabe won ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[B_HOTBABE_WINS1]
+G WIN_CLIPS
+T Hahahah I beat you
+T [S_GOOD] effort, better luck next time!
+T I win!
+T Sorry, but I killed you!
+
+[B_HOTBABE_WINS2]
+G B_HOTBABE_WINS1
+
+[B_HOTBABE_WINS3]
+G B_HOTBABE_WINS1
+
+[B_HOTBABE_WINS4]
+G B_HOTBABE_WINS1
+
+[B_HOTBABE_WINS5]
+G B_HOTBABE_WINS1
+
+[@HOTBABE_WINS]
+G B_HOTBABE_WINS1
+G B_HOTBABE_WINS1
+G B_HOTBABE_WINS1
+G B_HOTBABE_WINS2
+G B_HOTBABE_WINS3
+G B_HOTBABE_WINS4
+G B_HOTBABE_WINS5
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; When player moves
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[B_PLAYER_IN_CHECK]
+G POUT_CLIPS
+T I'm in check, thanks to you.
+T quit checking me out!
+T That's all I need right now..
+T Damn! I had a really [S_GOOD] move
+
+[B_PLAYER_CAPTURES_QUEEN1]
+G POUT_CLIPS
+T You [S_CAPTURED] my queen!
+T Are you a closet queen lover?
+T I don't need no stinking queen
+T I'm the only queen around here now.
+
+[B_PLAYER_CAPTURES_QUEEN2]
+G B_PLAYER_CAPTURES_QUEEN1
+
+[B_PLAYER_CAPTURES_QUEEN]
+G B_PLAYER_CAPTURES_QUEEN1
+G B_PLAYER_CAPTURES_QUEEN2
+
+[B_PLAYER_CAPTURES_ROOK]
+G POUT_CLIPS
+T You [S_CAPTURED] my rook!
+T I still think you're a rookie
+T I hope you enjoy my rook.
+T If Rooks Could Kill
+T You Rook Mahvelous
+T Scotch on the Rooks
+T Rook Shields
+
+[B_PLAYER_CAPTURES_BISHOP]
+G POUT_CLIPS
+T You [S_CAPTURED] my bishop!
+T Losing my bishop was.... a bummer
+T That's the last time I put my bishops near you
+
+[B_PLAYER_CAPTURES_KNIGHT]
+G POUT_CLIPS
+T You [S_CAPTURED] my knight!
+T Jousting with my knights?
+
+[B_PLAYER_CAPTURES_PAWN]
+G THINKING_CLIPS
+T You [S_CAPTURED] my pawn!
+T Your such a tool, er pawn of society
+T You like pawns, I like prawns.
+T Stick That Pawn Up Your a-file
+G T_FORTUNES_PL_MOVE
+
+[B_PLAYER_CASTLES]
+G GENERAL_CLIPS
+T You just castled!
+T Go ahead and hide... buster
+T [S_GOOD] castle
+T Castle Long Hoppity
+
+[B_PLAYER_PROMOTES]
+G POUT_CLIPS
+T You just promoted!
+T step into my office.... your fired, er promoted.
+T You have been promoted to Vice President of Hotbabe Inc.
+
+[B_PLAYER_EP_CAPTURES]
+G GENERAL_CLIPS
+T You just performed an e.p. capture
+T I forgot about e.p. captures...
+
+[B_PLAYER_MOVES]
+G THINKING_CLIPS
+T Nice move.
+T excellent move !
+T brilliant move !!
+T poor move?
+T gross blunder ??
+T dubious move ?!
+T interesting move !?
+T Did you just move a piece?
+T my turn?
+T Hmmmm. That's not what I was expecting you to move.
+T Chess Nuts Roasting On An Open File
+G T_FORTUNES_PL_MOVE
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@PLAYER_CHECKS]
+G B_GENERAL
+G B_GENERAL
+G B_PLAYER_IN_CHECK
+
+[@PLAYER_CAPTURES_QUEEN]
+G B_GENERAL
+G B_PLAYER_CAPTURES_QUEEN
+G B_PLAYER_CAPTURES_QUEEN
+
+[@PLAYER_CAPTURES_ROOK]
+G B_GENERAL
+G B_PLAYER_CAPTURES_ROOK
+G B_PLAYER_CAPTURES_ROOK
+
+[@PLAYER_CAPTURES_BISHOP]
+G B_GENERAL
+G B_PLAYER_CAPTURES_BISHOP
+
+[@PLAYER_CAPTURES_KNIGHT]
+G B_GENERAL
+G B_PLAYER_CAPTURES_KNIGHT
+
+[@PLAYER_CAPTURES_PAWN]
+G B_GENERAL
+G B_GENERAL
+G B_PLAYER_CAPTURES_PAWN
+
+[@PLAYER_CASTLES]
+G B_GENERAL
+G B_GENERAL
+G B_PLAYER_CASTLES
+
+[@PLAYER_PROMOTES]
+G B_PLAYER_PROMOTES
+
+[@PLAYER_EP_CAPTURES]
+G B_PLAYER_EP_CAPTURES
+
+[@PLAYER_MOVES]
+G B_GENERAL
+G B_GENERAL
+G B_GENERAL
+G B_PLAYER_MOVES
+G B_PLAYER_MOVES
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; When hotbabe moves
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[B_HOTBABE_IN_CHECK]
+G GENERAL_CLIPS
+T Check!
+T check it out!
+T check to your king
+
+[B_HOTBABE_CAPTURES_QUEEN]
+G HAPPY_CLIPS
+T Your queen is toast.
+T your queen has been [S_CAPTURED]
+
+[B_HOTBABE_CAPTURES_ROOK]
+G HAPPY_CLIPS
+T Your rook is gone
+T your rook has just been [S_CAPTURED]
+
+[B_HOTBABE_CAPTURES_BISHOP]
+G HAPPY_CLIPS
+T [S_BYE] bishop
+T your bishop has just been [S_CAPTURED]
+
+[B_HOTBABE_CAPTURES_KNIGHT]
+G HAPPY_CLIPS
+T [S_BYE] knight
+T i [S_CAPTURED] your knight
+
+[B_HOTBABE_CAPTURES_PAWN]
+G GENERAL_CLIPS
+T [S_BYE] pawn
+T hahaha i [S_CAPTURED] your pawn
+G T_FORTUNES_PL_MOVE
+
+[B_HOTBABE_CASTLES]
+G GENERAL_CLIPS
+T Time to hide in my castle
+
+[B_HOTBABE_PROMOTES]
+G HAPPY_CLIPS
+T I just got promoted
+
+[B_HOTBABE_EP_CAPTURES]
+G GENERAL_CLIPS
+T Did you see my e.p. capture?
+T welcome to the wonderful world of AIDS
+
+[B_HOTBABE_MOVES]
+G GENERAL_CLIPS
+T Well, that's my move.
+T this will [S_BLOW_YOUR_MIND]
+T did you see what i did, $player?
+T cha-ching
+G T_FORTUNES_PL_MOVE
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[@HOTBABE_CHECKS]
+G B_GENERAL
+G B_HOTBABE_IN_CHECK
+G B_HOTBABE_IN_CHECK
+
+[@HOTBABE_CAPTURES_QUEEN]
+G B_GENERAL
+G B_HOTBABE_CAPTURES_QUEEN
+G B_HOTBABE_CAPTURES_QUEEN
+
+[@HOTBABE_CAPTURES_ROOK]
+G B_GENERAL
+G B_HOTBABE_CAPTURES_ROOK
+G B_HOTBABE_CAPTURES_ROOK
+
+[@HOTBABE_CAPTURES_BISHOP]
+G B_GENERAL
+G B_HOTBABE_CAPTURES_BISHOP
+
+[@HOTBABE_CAPTURES_KNIGHT]
+G B_GENERAL
+G B_HOTBABE_CAPTURES_KNIGHT
+
+[@HOTBABE_CAPTURES_PAWN]
+G B_GENERAL
+G B_GENERAL
+G B_GENERAL
+G B_HOTBABE_CAPTURES_PAWN
+
+[@HOTBABE_CASTLES]
+G B_GENERAL
+G B_GENERAL
+G B_HOTBABE_CASTLES
+
+[@HOTBABE_PROMOTES]
+G B_HOTBABE_PROMOTES
+
+[@HOTBABE_EP_CAPTURES]
+G B_GENERAL
+G B_HOTBABE_CASTLES
+G B_HOTBABE_CASTLES
+
+[@HOTBABE_MOVES]
+G B_GENERAL
+G B_GENERAL
+G B_GENERAL
+G B_HOTBABE_MOVES
+G B_HOTBABE_MOVES
+
+;;;;;;;;;; END OF FILE ;;;;;;;;;;;;;;;;;;;;;
